@@ -1,95 +1,731 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
+<head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PARSA MENU</title>
-      <link rel="icon" href="favicon.io.png" type="image/png">
-  </head>
-  <body style="background-image: url('background 4.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center;">
-    <hr size="3" noshade color=green>
-    <center>
-      <table cellspacing="50">
-        <tr>
-          <td>  <h1 style="color: yellow;">PARSA</h1>
-          <h2 style="color:#FFFFFF;">MENU</h2></td>
-          <td><table cellspacing="30" border="1" style="color:#FFFFFF;">
+    <link rel="icon" href="favicon.ico" type="image/png">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/bstyles.css"> <!-- Your custom CSS -->
+</head>
+<body class="bg-dark text-white">
+
+                         <!-- Bootstrap 5.3 JS and dependencies -->
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+
+
+    <!-- Navbar -->
+
+    </nav>
+    <nav class="navbar navbar-expand-lg bg-body-success">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"> <img src="favicon.ico" alt="logo"> </a>
+        <a class="navbar-brand" href="#">PARSA</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+            </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+            <a class="nav-link "  href="index.html">Home</a>
+        </li>
+              <li class="nav-item">
+          <a class="nav-link active" href="prices.html">Prices</a>
+              </li>
+            </nav>
+
+
+
+
+    <!-- Menu Header -->
+    <div class="container text-center my-5">
+        <h1 class="display-4 text-warning">PARSA</h1>
+        <h2 class="display-5 text-light">MENU</h2>
+    </div>
+
+    <!-- Menu Table -->
+    <div class="container mb-5">
+      <div class="menu-table">
+
+
+        <table class="table table-dark table-striped table-bordered">
             <thead>
-              <tr>
-                <th style="color:#FFFFFF;">Products</th>
-                <th>Prices</th>
-              </tr>
+                <tr>
+                    <th>Products</th>
+                    <th>Prices</th>
+                </tr>
             </thead>
-          <tr>
-            <td>Samosa</td>
-            <td>R.s 25 per samosa</td>
-          </tr>
-          <tr>
-            <td>Jalebi</td>
-            <td>R.s 700 per Kg</td>
-          </tr>
-          <tr>
-            <td>Pakoray</td>
-            <td>R.s 700 per Kg</td>
-          </tr>
-          <tr>
-            <td>Halva puri</td>
-            <td>R.s 220 per Bf.</td>
-          </tr>
-        </table></td>
-        </tr>
-      </table>
-    <hr size="3" noshade color=green>
-</center>
-<center>
-  <h3 style="color:#FFA500;">Order Now</h3>
-  </center>
-  <h4 style="color:#FFA500;">Note</h4>
-  <p  style="color:#FFFFFF;"><em>The order only be dilivered in these areas i.e <strong>Jinnah garden Islamabad, Naval Anchorage Islamabad, Soan Garden Islamabad, and PWD Islamabad</strong>.
-  The dilivery charges will changes according to area. <strong>Halva puri is not diliverable</strong>.</em></p>
-  <hr size="3" noshade color=green>
-  <center>
-  <h4 style="color:#FFA500;"><strong>Enter Oder details</strong></h4>
-    </center>
-<em><strong> <form action="mailto:mz298814@gmail.com" method="post" enctype="text/plain" style="color:#6B8E23;" >
-    <table cellspacing="20">
-      <tr>
-        <td><label for="">Your Name:</label></td>
-        <td><input type="text" name="Your Name" value=""> <br></td>
-      </tr>
-      <tr>
-      <td><label for="">Samosas in Dozen:</label></td>
-      <td><input type="number" name="samosas" value=""></td>
-        </tr>
-        <tr>
-          <td><label for="">Jalebi each no=500g:</label></td>
-          <td><input type="number" name="Jalebi" value=""><br></td>
-        </tr>
-        <tr>
-          <td><label for="">Pakoray each no=500g:</label></td>
-          <td><input type="number" name="pakoray" value=""><br></td>
-        </tr>
-        <tr>
-          <td><label for="">Area:</label></td>
-          <td><input type="text" name="Area" value=""> <br></td>
-        </tr>
-        <tr>
-          <td>  <label for="">Address:</label></td>
-          <td>  <input type="text" name="Address" value=""> <br></td>
-        </tr>
-        <tr>
-          <td><label for="">Whatsapp No:</label></td>
-          <td><input type="tel" name="Whatssapp no" value=""><br></td>
-        </tr>
-        <tr>
-          <td><label for="">Comment:</label></td>
-          <td><textarea name="Comment" rows="10" cols="30"></textarea><br></td>
-        </tr>
-        <tr>
-          <td><label for="">Submit Details:</label></td>
-          <td><input type="submit" name="" value=""></td>
-        </tr>
-    </table>
-  </form></strong></em> 
-    <hr size="3" noshade color=green>
-  </body>
+            <tbody>
+                <tr>
+                    <td>Samosa</td>
+                    <td>R.s 300 per dozen</td>
+                </tr>
+                <tr>
+                    <td>Jalebi</td>
+                    <td>R.s 700 per Kg</td>
+                </tr>
+                <tr>
+                    <td>Pakoray</td>
+                    <td>R.s 700 per Kg</td>
+                </tr>
+                <tr>
+                    <td>Halva puri</td>
+                    <td>R.s 220 per Bf.</td>
+                </tr>
+                <tr>
+                  <td>Desi lado</td>
+                  <td>R.s 1000 per Kg</td>
+                </tr>
+                <tr>
+                  <td>Gulab Jamun</td>
+                  <td>R.s 1500 per kg</td>
+                </tr>
+                <tr>
+                  <td>Barfi</td>
+                  <td>R.s 1500 per Kg</td>
+                </tr>
+                <tr>
+                  <td>Namak pary</td>
+                  <td>R.s 700 per Kg</td>
+                </tr>
+                <tr>
+                  <td>Shakar pary</td>
+                  <td>R.s 700 per Kg</td>
+                </tr>
+                <tr>
+                  <td>Lahori chany</td>
+                  <td>R.s 700 per Kg</td>
+                </tr>
+                <tr>
+                  <td>Halva(milk)</td>
+                  <td>R.s 700 per Kg</td>
+                </tr>
+                <tr>
+                  <td>Frozen Samosa(potato)</td>
+                  <td>R.s 240 per dozen</td>
+                </tr>
+                <tr>
+                  <td>Frozen Samosa(vegetable)</td>
+                  <td>R.s 300 per dozen</td>
+                </tr>
+                <tr>
+                  <td>Frozen Samosa(beef)</td>
+                  <td>R.s 400 per dozen</td>
+                </tr>
+                <tr>
+                  <td>Samosa patti</td>
+                  <td>R.s 400 per Kg</td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+    </div>
+
+    <!-- Order Now -->
+    <div class="container text-center my-5">
+        <h3 class="text-warning">Order Now</h3>
+    </div>
+
+    <!-- Note -->
+    <div class="container my-5">
+        <h4 class="text-warning">Note</h4>
+        <p>The order only be delivered in these areas i.e <strong>Jinnah Garden Islamabad and Naval Anchorage Islamabad</strong>. The delivery charges in Jinnah garden is R.s 100 and in Naval Anchorage is 150. <strong>Halva puri is not deliverable</strong>.</p>
+    </div>
+
+    <!-- Order Form -->
+    <div class="container my-5">
+    <h4 class="text-warning">Select Your Order</h4>
+    <!-- Name input -->
+    <label for="customerName" class="mt-3">Your Name:</label>
+    <input type="text" id="customerName" class="form-control" placeholder="Enter your name">
+
+    <!-- Area with two options: Jinnah Garden and Navl -->
+    <label for="area" class="mt-3">Select Area:</label>
+    <select id="area" class="form-control">
+        <option value="Jinnah Garden">Jinnah Garden</option>
+        <option value="Navl">Navl Anchorage</option>
+    </select>
+
+    <!-- Address input -->
+    <label for="address" class="mt-3">Address:</label>
+    <input type="text" id="address" class="form-control" placeholder="Enter your address">
+
+
+
+    <!-- Samosas in Dozen -->
+    <label for="samosas">Samosas (in Dozen):</label>
+    <select id="samosas" class="form-control">
+        <option value="0">0 Dozen</option>
+        <option value="1">1 Dozen</option>
+        <option value="2">2 Dozen</option>
+        <option value="3">3 Dozen</option>
+        <option value="4">4 Dozen</option>
+        <option value="5">5 Dozen</option>
+        <option value="6">6 Dozen</option>
+        <option value="7">7 Dozen</option>
+        <option value="8">8 Dozen</option>
+        <option value="9">9 Dozen</option>
+        <option value="10">10 Dozen</option>
+    </select>
+
+    <!-- Jalebi in kg -->
+    <label for="jalebi" class="mt-3">Jalebi (in 250g increments):</label>
+    <select id="jalebi" class="form-control">
+        <option value="0">0g</option>
+        <option value="250">250g</option>
+        <option value="500">500g</option>
+        <option value="750">750g</option>
+        <option value="1000">1 kg</option>
+        <option value="1250">1.25 kg</option>
+        <option value="1500">1.5 kg</option>
+        <option value="1750">1.75 kg</option>
+        <option value="2000">2 kg</option>
+        <option value="2250">2.25 kg</option>
+        <option value="2500">2.5 kg</option>
+        <option value="2750">2.75 kg</option>
+        <option value="3000">3 kg</option>
+        <option value="3250">3.25 kg</option>
+        <option value="3500">3.5 kg</option>
+        <option value="3750">3.75 kg</option>
+        <option value="4000">4 kg</option>
+        <option value="4250">4.25 kg</option>
+        <option value="4500">4.5 kg</option>
+        <option value="4750">4.75 kg</option>
+        <option value="5000">5 kg</option>
+        <option value="5250">5.25 kg</option>
+        <option value="5500">5.5 kg</option>
+        <option value="5750">5.75 kg</option>
+        <option value="6000">6 kg</option>
+        <option value="6250">6.25 kg</option>
+        <option value="6500">6.5 kg</option>
+        <option value="6750">6.75 kg</option>
+        <option value="7000">7 kg</option>
+        <option value="7250">7.25 kg</option>
+        <option value="7500">7.5 kg</option>
+        <option value="7750">7.75 kg</option>
+        <option value="8000">8 kg</option>
+        <option value="8250">8.25 kg</option>
+        <option value="8500">8.5 kg</option>
+        <option value="8750">8.75 kg</option>
+        <option value="9000">9 kg</option>
+        <option value="9250">9.25 kg</option>
+        <option value="9500">9.5 kg</option>
+        <option value="9750">9.75 kg</option>
+        <option value="10000">10 kg</option>
+    </select>
+
+    <!-- Pakoray in kg -->
+    <label for="pakoray" class="mt-3">Pakoray (in 250g increments):</label>
+    <select id="pakoray" class="form-control">
+        <option value="0">0g</option>
+        <option value="250">250g</option>
+        <option value="500">500g</option>
+        <option value="750">750g</option>
+        <option value="1000">1 kg</option>
+        <option value="1250">1.25 kg</option>
+        <option value="1500">1.5 kg</option>
+        <option value="1750">1.75 kg</option>
+        <option value="2000">2 kg</option>
+        <option value="2250">2.25 kg</option>
+        <option value="2500">2.5 kg</option>
+        <option value="2750">2.75 kg</option>
+        <option value="3000">3 kg</option>
+        <option value="3250">3.25 kg</option>
+        <option value="3500">3.5 kg</option>
+        <option value="3750">3.75 kg</option>
+        <option value="4000">4 kg</option>
+        <option value="4250">4.25 kg</option>
+        <option value="4500">4.5 kg</option>
+        <option value="4750">4.75 kg</option>
+        <option value="5000">5 kg</option>
+        <option value="5250">5.25 kg</option>
+        <option value="5500">5.5 kg</option>
+        <option value="5750">5.75 kg</option>
+        <option value="6000">6 kg</option>
+        <option value="6250">6.25 kg</option>
+        <option value="6500">6.5 kg</option>
+        <option value="6750">6.75 kg</option>
+        <option value="7000">7 kg</option>
+        <option value="7250">7.25 kg</option>
+        <option value="7500">7.5 kg</option>
+        <option value="7750">7.75 kg</option>
+        <option value="8000">8 kg</option>
+        <option value="8250">8.25 kg</option>
+        <option value="8500">8.5 kg</option>
+        <option value="8750">8.75 kg</option>
+        <option value="9000">9 kg</option>
+        <option value="9250">9.25 kg</option>
+        <option value="9500">9.5 kg</option>
+        <option value="9750">9.75 kg</option>
+        <option value="10000">10 kg</option>
+    </select>
+    <!-- Desi Ladoo in kg -->
+<label for="desiLadoo" class="mt-3">Desi Ladoo (in 250g increments):</label>
+<select id="desiLadoo" class="form-control">
+    <option value="0">0g</option>
+    <option value="250">250g</option>
+    <option value="500">500g</option>
+    <option value="750">750g</option>
+    <option value="1000">1 kg</option>
+    <option value="1250">1.25 kg</option>
+    <option value="1500">1.5 kg</option>
+    <option value="1750">1.75 kg</option>
+    <option value="2000">2 kg</option>
+    <option value="2250">2.25 kg</option>
+    <option value="2500">2.5 kg</option>
+    <option value="2750">2.75 kg</option>
+    <option value="3000">3 kg</option>
+    <option value="3250">3.25 kg</option>
+    <option value="3500">3.5 kg</option>
+    <option value="3750">3.75 kg</option>
+    <option value="4000">4 kg</option>
+    <option value="4250">4.25 kg</option>
+    <option value="4500">4.5 kg</option>
+    <option value="4750">4.75 kg</option>
+    <option value="5000">5 kg</option>
+    <option value="5250">5.25 kg</option>
+    <option value="5500">5.5 kg</option>
+    <option value="5750">5.75 kg</option>
+    <option value="6000">6 kg</option>
+    <option value="6250">6.25 kg</option>
+    <option value="6500">6.5 kg</option>
+    <option value="6750">6.75 kg</option>
+    <option value="7000">7 kg</option>
+    <option value="7250">7.25 kg</option>
+    <option value="7500">7.5 kg</option>
+    <option value="7750">7.75 kg</option>
+    <option value="8000">8 kg</option>
+    <option value="8250">8.25 kg</option>
+    <option value="8500">8.5 kg</option>
+    <option value="8750">8.75 kg</option>
+    <option value="9000">9 kg</option>
+    <option value="9250">9.25 kg</option>
+    <option value="9500">9.5 kg</option>
+    <option value="9750">9.75 kg</option>
+    <option value="10000">10 kg</option>
+</select>
+<!-- Gulab Jamun in kg -->
+<label for="gulabJamun" class="mt-3">Gulab Jamun (in 250g increments):</label>
+<select id="gulabJamun" class="form-control">
+    <option value="0">0g</option>
+    <option value="250">250g</option>
+    <option value="500">500g</option>
+    <option value="750">750g</option>
+    <option value="1000">1 kg</option>
+    <option value="1250">1.25 kg</option>
+    <option value="1500">1.5 kg</option>
+    <option value="1750">1.75 kg</option>
+    <option value="2000">2 kg</option>
+    <option value="2250">2.25 kg</option>
+    <option value="2500">2.5 kg</option>
+    <option value="2750">2.75 kg</option>
+    <option value="3000">3 kg</option>
+    <option value="3250">3.25 kg</option>
+    <option value="3500">3.5 kg</option>
+    <option value="3750">3.75 kg</option>
+    <option value="4000">4 kg</option>
+    <option value="4250">4.25 kg</option>
+    <option value="4500">4.5 kg</option>
+    <option value="4750">4.75 kg</option>
+    <option value="5000">5 kg</option>
+    <option value="5250">5.25 kg</option>
+    <option value="5500">5.5 kg</option>
+    <option value="5750">5.75 kg</option>
+    <option value="6000">6 kg</option>
+    <option value="6250">6.25 kg</option>
+    <option value="6500">6.5 kg</option>
+    <option value="6750">6.75 kg</option>
+    <option value="7000">7 kg</option>
+    <option value="7250">7.25 kg</option>
+    <option value="7500">7.5 kg</option>
+    <option value="7750">7.75 kg</option>
+    <option value="8000">8 kg</option>
+    <option value="8250">8.25 kg</option>
+    <option value="8500">8.5 kg</option>
+    <option value="8750">8.75 kg</option>
+    <option value="9000">9 kg</option>
+    <option value="9250">9.25 kg</option>
+    <option value="9500">9.5 kg</option>
+    <option value="9750">9.75 kg</option>
+    <option value="10000">10 kg</option>
+</select>
+<!-- Barfi in kg -->
+<label for="barfi" class="mt-3">Barfi (in 250g increments):</label>
+<select id="barfi" class="form-control">
+    <option value="0">0g</option>
+    <option value="250">250g</option>
+    <option value="500">500g</option>
+    <option value="750">750g</option>
+    <option value="1000">1 kg</option>
+    <option value="1250">1.25 kg</option>
+    <option value="1500">1.5 kg</option>
+    <option value="1750">1.75 kg</option>
+    <option value="2000">2 kg</option>
+    <option value="2250">2.25 kg</option>
+    <option value="2500">2.5 kg</option>
+    <option value="2750">2.75 kg</option>
+    <option value="3000">3 kg</option>
+    <option value="3250">3.25 kg</option>
+    <option value="3500">3.5 kg</option>
+    <option value="3750">3.75 kg</option>
+    <option value="4000">4 kg</option>
+    <option value="4250">4.25 kg</option>
+    <option value="4500">4.5 kg</option>
+    <option value="4750">4.75 kg</option>
+    <option value="5000">5 kg</option>
+    <option value="5250">5.25 kg</option>
+    <option value="5500">5.5 kg</option>
+    <option value="5750">5.75 kg</option>
+    <option value="6000">6 kg</option>
+    <option value="6250">6.25 kg</option>
+    <option value="6500">6.5 kg</option>
+    <option value="6750">6.75 kg</option>
+    <option value="7000">7 kg</option>
+    <option value="7250">7.25 kg</option>
+    <option value="7500">7.5 kg</option>
+    <option value="7750">7.75 kg</option>
+    <option value="8000">8 kg</option>
+    <option value="8250">8.25 kg</option>
+    <option value="8500">8.5 kg</option>
+    <option value="8750">8.75 kg</option>
+    <option value="9000">9 kg</option>
+    <option value="9250">9.25 kg</option>
+    <option value="9500">9.5 kg</option>
+    <option value="9750">9.75 kg</option>
+    <option value="10000">10 kg</option>
+</select>
+<!-- Namak Pary in kg -->
+<label for="namakPary" class="mt-3">Namak Pary (in 250g increments):</label>
+<select id="namakPary" class="form-control">
+    <option value="0">0g</option>
+    <option value="250">250g</option>
+    <option value="500">500g</option>
+    <option value="750">750g</option>
+    <option value="1000">1 kg</option>
+    <option value="1250">1.25 kg</option>
+    <option value="1500">1.5 kg</option>
+    <option value="1750">1.75 kg</option>
+    <option value="2000">2 kg</option>
+    <option value="2250">2.25 kg</option>
+    <option value="2500">2.5 kg</option>
+    <option value="2750">2.75 kg</option>
+    <option value="3000">3 kg</option>
+    <option value="3250">3.25 kg</option>
+    <option value="3500">3.5 kg</option>
+    <option value="3750">3.75 kg</option>
+    <option value="4000">4 kg</option>
+    <option value="4250">4.25 kg</option>
+    <option value="4500">4.5 kg</option>
+    <option value="4750">4.75 kg</option>
+    <option value="5000">5 kg</option>
+    <option value="5250">5.25 kg</option>
+    <option value="5500">5.5 kg</option>
+    <option value="5750">5.75 kg</option>
+    <option value="6000">6 kg</option>
+    <option value="6250">6.25 kg</option>
+    <option value="6500">6.5 kg</option>
+    <option value="6750">6.75 kg</option>
+    <option value="7000">7 kg</option>
+    <option value="7250">7.25 kg</option>
+    <option value="7500">7.5 kg</option>
+    <option value="7750">7.75 kg</option>
+    <option value="8000">8 kg</option>
+    <option value="8250">8.25 kg</option>
+    <option value="8500">8.5 kg</option>
+    <option value="8750">8.75 kg</option>
+    <option value="9000">9 kg</option>
+    <option value="9250">9.25 kg</option>
+    <option value="9500">9.5 kg</option>
+    <option value="9750">9.75 kg</option>
+    <option value="10000">10 kg</option>
+</select>
+<!-- Shakar Pary in kg -->
+<label for="shakarPary" class="mt-3">Shakar Pary (in 250g increments):</label>
+<select id="shakarPary" class="form-control">
+    <option value="0">0g</option>
+    <option value="250">250g</option>
+    <option value="500">500g</option>
+    <option value="750">750g</option>
+    <option value="1000">1 kg</option>
+    <option value="1250">1.25 kg</option>
+    <option value="1500">1.5 kg</option>
+    <option value="1750">1.75 kg</option>
+    <option value="2000">2 kg</option>
+    <option value="2250">2.25 kg</option>
+    <option value="2500">2.5 kg</option>
+    <option value="2750">2.75 kg</option>
+    <option value="3000">3 kg</option>
+    <option value="3250">3.25 kg</option>
+    <option value="3500">3.5 kg</option>
+    <option value="3750">3.75 kg</option>
+    <option value="4000">4 kg</option>
+    <option value="4250">4.25 kg</option>
+    <option value="4500">4.5 kg</option>
+    <option value="4750">4.75 kg</option>
+    <option value="5000">5 kg</option>
+    <option value="5250">5.25 kg</option>
+    <option value="5500">5.5 kg</option>
+    <option value="5750">5.75 kg</option>
+    <option value="6000">6 kg</option>
+    <option value="6250">6.25 kg</option>
+    <option value="6500">6.5 kg</option>
+    <option value="6750">6.75 kg</option>
+    <option value="7000">7 kg</option>
+    <option value="7250">7.25 kg</option>
+    <option value="7500">7.5 kg</option>
+    <option value="7750">7.75 kg</option>
+    <option value="8000">8 kg</option>
+    <option value="8250">8.25 kg</option>
+    <option value="8500">8.5 kg</option>
+    <option value="8750">8.75 kg</option>
+    <option value="9000">9 kg</option>
+    <option value="9250">9.25 kg</option>
+    <option value="9500">9.5 kg</option>
+    <option value="9750">9.75 kg</option>
+    <option value="10000">10 kg</option>
+</select>
+<label for="lahoriChany" class="mt-3">Lahori Chany (in 250g increments):</label>
+<select id="lahoriChany" class="form-control">
+    <option value="0">0g</option>
+    <option value="250">250g</option>
+    <option value="500">500g</option>
+    <option value="750">750g</option>
+    <option value="1000">1 kg</option>
+    <option value="1250">1.25 kg</option>
+    <option value="1500">1.5 kg</option>
+    <option value="1750">1.75 kg</option>
+    <option value="2000">2 kg</option>
+    <option value="2250">2.25 kg</option>
+    <option value="2500">2.5 kg</option>
+    <option value="2750">2.75 kg</option>
+    <option value="3000">3 kg</option>
+    <option value="3250">3.25 kg</option>
+    <option value="3500">3.5 kg</option>
+    <option value="3750">3.75 kg</option>
+    <option value="4000">4 kg</option>
+    <option value="4250">4.25 kg</option>
+    <option value="4500">4.5 kg</option>
+    <option value="4750">4.75 kg</option>
+    <option value="5000">5 kg</option>
+    <option value="5250">5.25 kg</option>
+    <option value="5500">5.5 kg</option>
+    <option value="5750">5.75 kg</option>
+    <option value="6000">6 kg</option>
+    <option value="6250">6.25 kg</option>
+    <option value="6500">6.5 kg</option>
+    <option value="6750">6.75 kg</option>
+    <option value="7000">7 kg</option>
+    <option value="7250">7.25 kg</option>
+    <option value="7500">7.5 kg</option>
+    <option value="7750">7.75 kg</option>
+    <option value="8000">8 kg</option>
+    <option value="8250">8.25 kg</option>
+    <option value="8500">8.5 kg</option>
+    <option value="8750">8.75 kg</option>
+    <option value="9000">9 kg</option>
+    <option value="9250">9.25 kg</option>
+    <option value="9500">9.5 kg</option>
+    <option value="9750">9.75 kg</option>
+    <option value="10000">10 kg</option>
+</select>
+<!-- Halva (Milk) in kg -->
+<label for="halvaMilk" class="mt-3">Halva (Milk) (in 250g increments):</label>
+<select id="halvaMilk" class="form-control">
+    <option value="0">0g</option>
+    <option value="250">250g</option>
+    <option value="500">500g</option>
+    <option value="750">750g</option>
+    <option value="1000">1 kg</option>
+    <option value="1250">1.25 kg</option>
+    <option value="1500">1.5 kg</option>
+    <option value="1750">1.75 kg</option>
+    <option value="2000">2 kg</option>
+    <option value="2250">2.25 kg</option>
+    <option value="2500">2.5 kg</option>
+    <option value="2750">2.75 kg</option>
+    <option value="3000">3 kg</option>
+    <option value="3250">3.25 kg</option>
+    <option value="3500">3.5 kg</option>
+    <option value="3750">3.75 kg</option>
+    <option value="4000">4 kg</option>
+    <option value="4250">4.25 kg</option>
+    <option value="4500">4.5 kg</option>
+    <option value="4750">4.75 kg</option>
+    <option value="5000">5 kg</option>
+    <option value="5250">5.25 kg</option>
+    <option value="5500">5.5 kg</option>
+    <option value="5750">5.75 kg</option>
+    <option value="6000">6 kg</option>
+    <option value="6250">6.25 kg</option>
+    <option value="6500">6.5 kg</option>
+    <option value="6750">6.75 kg</option>
+    <option value="7000">7 kg</option>
+    <option value="7250">7.25 kg</option>
+    <option value="7500">7.5 kg</option>
+    <option value="7750">7.75 kg</option>
+    <option value="8000">8 kg</option>
+    <option value="8250">8.25 kg</option>
+    <option value="8500">8.5 kg</option>
+    <option value="8750">8.75 kg</option>
+    <option value="9000">9 kg</option>
+    <option value="9250">9.25 kg</option>
+    <option value="9500">9.5 kg</option>
+    <option value="9750">9.75 kg</option>
+    <option value="10000">10 kg</option>
+</select>
+<!-- Samosa (Potato) in dozens -->
+<label for="samosaPotato" class="mt-3">Samosa (Potato) (in dozens):</label>
+<select id="samosaPotato" class="form-control">
+    <option value="0">0 dozen</option>
+    <option value="1">1 dozen</option>
+    <option value="2">2 dozen</option>
+    <option value="3">3 dozen</option>
+    <option value="4">4 dozen</option>
+    <option value="5">5 dozen</option>
+    <option value="6">6 dozen</option>
+    <option value="7">7 dozen</option>
+    <option value="8">8 dozen</option>
+    <option value="9">9 dozen</option>
+    <option value="10">10 dozen</option>
+</select>
+
+<!-- Samosa (Vegetable) in dozens -->
+<label for="samosaVegetable" class="mt-3">Samosa (Vegetable) (in dozens):</label>
+<select id="samosaVegetable" class="form-control">
+    <option value="0">0 dozen</option>
+    <option value="1">1 dozen</option>
+    <option value="2">2 dozen</option>
+    <option value="3">3 dozen</option>
+    <option value="4">4 dozen</option>
+    <option value="5">5 dozen</option>
+    <option value="6">6 dozen</option>
+    <option value="7">7 dozen</option>
+    <option value="8">8 dozen</option>
+    <option value="9">9 dozen</option>
+    <option value="10">10 dozen</option>
+</select>
+
+<!-- Samosa (Beef) in dozens -->
+<label for="samosaBeef" class="mt-3">Samosa (Beef) (in dozens):</label>
+<select id="samosaBeef" class="form-control">
+    <option value="0">0 dozen</option>
+    <option value="1">1 dozen</option>
+    <option value="2">2 dozen</option>
+    <option value="3">3 dozen</option>
+    <option value="4">4 dozen</option>
+    <option value="5">5 dozen</option>
+    <option value="6">6 dozen</option>
+    <option value="7">7 dozen</option>
+    <option value="8">8 dozen</option>
+    <option value="9">9 dozen</option>
+    <option value="10">10 dozen</option>
+</select>
+<label for="samosapatti" class="mt-3">Samosa Patti </label>
+<select id="samosapatti" class="form-control" >
+  <option value="0">0g</option>
+  <option value="250">250g</option>
+  <option value="500">500g</option>
+  <option value="750">750g</option>
+  <option value="1000">1 kg</option>
+  <option value="1250">1.25 kg</option>
+  <option value="1500">1.5 kg</option>
+  <option value="1750">1.75 kg</option>
+  <option value="2000">2 kg</option>
+  <option value="2250">2.25 kg</option>
+  <option value="2500">2.5 kg</option>
+  <option value="2750">2.75 kg</option>
+  <option value="3000">3 kg</option>
+  <option value="3250">3.25 kg</option>
+  <option value="3500">3.5 kg</option>
+  <option value="3750">3.75 kg</option>
+  <option value="4000">4 kg</option>
+  <option value="4250">4.25 kg</option>
+  <option value="4500">4.5 kg</option>
+  <option value="4750">4.75 kg</option>
+  <option value="5000">5 kg</option>
+  <option value="5250">5.25 kg</option>
+  <option value="5500">5.5 kg</option>
+  <option value="5750">5.75 kg</option>
+  <option value="6000">6 kg</option>
+  <option value="6250">6.25 kg</option>
+  <option value="6500">6.5 kg</option>
+  <option value="6750">6.75 kg</option>
+  <option value="7000">7 kg</option>
+  <option value="7250">7.25 kg</option>
+  <option value="7500">7.5 kg</option>
+  <option value="7750">7.75 kg</option>
+  <option value="8000">8 kg</option>
+  <option value="8250">8.25 kg</option>
+  <option value="8500">8.5 kg</option>
+  <option value="8750">8.75 kg</option>
+  <option value="9000">9 kg</option>
+  <option value="9250">9.25 kg</option>
+  <option value="9500">9.5 kg</option>
+  <option value="9750">9.75 kg</option>
+  <option value="10000">10 kg</option>
+
+</select>
+
+    <button id="sendOrder" class="btn btn-warning mt-3">Send Order</button>
+</div>
+
+
+
+       <!-- JavaScript for WhatsApp form submission -->
+       <script>
+       document.getElementById('sendOrder').addEventListener('click', function() {
+           // Collect values from the form
+           const name = encodeURIComponent(document.getElementById('customerName').value.trim());
+           const area = encodeURIComponent(document.getElementById('area').value);
+           const address = encodeURIComponent(document.getElementById('address').value.trim());
+
+           const samosas = encodeURIComponent(document.getElementById('samosas').value);
+           const jalebi = encodeURIComponent(document.getElementById('jalebi').value);
+           const pakoray = encodeURIComponent(document.getElementById('pakoray').value);
+           const desiLadoo = encodeURIComponent(document.getElementById('desiLadoo').value);
+           const gulabJamun = encodeURIComponent(document.getElementById('gulabJamun').value);
+           const barfi = encodeURIComponent(document.getElementById('barfi').value);
+           const namakPary = encodeURIComponent(document.getElementById('namakPary').value);
+           const shakarPary = encodeURIComponent(document.getElementById('shakarPary').value);
+           const lahoriChany = encodeURIComponent(document.getElementById('lahoriChany').value);
+           const halvaMilk = encodeURIComponent(document.getElementById('halvaMilk').value);
+           const samosaPotato = encodeURIComponent(document.getElementById('samosaPotato').value);
+           const samosaVegetable = encodeURIComponent(document.getElementById('samosaVegetable').value);
+           const samosaBeef = encodeURIComponent(document.getElementById('samosaBeef').value);
+           const samosaPatti = encodeURIComponent(document.getElementById('samosapatti').value);
+
+           // Construct message with proper line breaks (%0A)
+           const message = `Hello,%20I%20would%20like%20to%20order:%0A%0A` +
+                           `Name:%20${name}%0A` +
+                           `Area:%20${area}%0A` +
+                           `Address:%20${address}%0A%0A` +
+                           `Samosas:%20${samosas}%20dozen%0A` +
+                           `Jalebi:%20${jalebi}%20g%0A` +
+                           `Pakoray:%20${pakoray}%20g%0A` +
+                           `Desi%20Ladoo:%20${desiLadoo}%20g%0A` +
+                           `Gulab%20Jamun:%20${gulabJamun}%20g%0A` +
+                           `Barfi:%20${barfi}%20g%0A` +
+                           `Namak%20Pary:%20${namakPary}%20g%0A` +
+                           `Shakar%20Pary:%20${shakarPary}%20g%0A` +
+                           `Lahori%20Chany:%20${lahoriChany}%20g%0A` +
+                           `Halva%20(Milk):%20${halvaMilk}%20g%0A` +
+                           `Samosa%20(Potato):%20${samosaPotato}%20dozen%0A` +
+                           `Samosa%20(Vegetable):%20${samosaVegetable}%20dozen%0A` +
+                           `Samosa%20(Beef):%20${samosaBeef}%20dozen%0A` +
+                           `Samosa%20Patti:%20${samosaPatti}%20g`;
+
+           // WhatsApp URL with the encoded message
+           const whatsappUrl = `https://wa.me/923025138393?text=${message}`;
+
+           // Redirect to WhatsApp with the pre-filled message
+           window.location.href = whatsappUrl;
+       });
+   </script>
+
+
+</body>
 </html>

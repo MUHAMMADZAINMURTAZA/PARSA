@@ -1,0 +1,185 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: green; /* Green color */
+    padding: 15px 30px;
+}
+
+.navbar-brand img {
+    height: 50px; /* Adjust logo size */
+}
+
+.navbar-brand {
+    color: #fff;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+
+.navbar-toggler {
+    border-color: #fff;
+}
+
+.navbar-toggler-icon {
+    background-image: url('data:image/svg+xml;charset=utf8,<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"><path stroke="%23fff" stroke-width="2" d="M5 7h20M5 15h20M5 23h20"/></svg>');
+}
+ .navbar-nav .nav-link {
+    color: #fff;
+    font-size: 18px;
+    margin-right: 20px;
+}
+
+.navbar-nav .nav-link:hover {
+    color: black; 
+}
+
+
+/* Submit Button Styles */
+.submit-button {
+    background-color: #007bff; /* Blue background */
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.submit-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: scale(1.05); /* Slightly enlarge the button on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+}
+
+/* Other Styles */
+.container {
+    padding: 2rem;
+}
+
+.section {
+    margin-bottom: 2rem;
+}
+.menu-header {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.menu-header h1, .menu-header h2 {
+    margin: 0;
+}
+
+.menu-header h1 {
+    color: #ffdd57; /* Light yellow */
+    font-size: 40px;
+}
+
+.menu-header h2 {
+    color: #ffffff; /* White */
+    font-size: 32px;
+}
+
+.menu-table {
+    width: 80%;
+    margin: 0 auto;
+    background-color: #1d3f2c;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.menu-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.menu-table th, .menu-table td {
+    padding: 15px;
+    text-align: left;
+}
+
+.menu-table th {
+    background-color: #28a745; /* Green color */
+    color: #fff;
+}
+
+.menu-table td {
+    color: #fff;
+}
+
+.order-now, .note, .order-form {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.order-now h3, .note h4, .order-form h4 {
+    color: #FFA500; /* Orange */
+    margin: 10px 0;
+}
+
+.order-form form {
+    background-color: #1d3f2c;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 0 auto;
+    width: 80%;
+}
+
+.order-form table {
+    width: 100%;
+}
+
+.order-form td {
+    padding: 10px;
+}
+
+.order-form input[type="text"], .order-form input[type="number"], .order-form input[type="tel"], .order-form textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.order-form input[type="submit"] {
+    background-color: #ff5722; /* Vivid orange */
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.order-form input[type="submit"]:hover {
+    background-color: #e64a19; /* Darker orange on hover */
+    transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
+
+.table:hover {
+    background-color: #343a40;}
+
+    .table {
+        border: 2px solid #ffc107;
+        border-radius: 5px;
+        overflow: hidden;
+        margin-top: 20px;
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .table thead {
+        background-color: #ffc107;
+        color: #212529;
+        font-size: 1.2rem;
+    }
