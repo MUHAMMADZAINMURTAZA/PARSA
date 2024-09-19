@@ -167,15 +167,15 @@ img {
     justify-content: space-between;
 }
 
-.left-text, .right-text {
+.left, .right {
     width: 48%;
 }
 
-.left-text {
+.left {
     text-align: left;
 }
 
-.right-text {
+.right {
     text-align: right;
     direction: rtl;
 }
