@@ -129,6 +129,22 @@
     <div class=" text-center my-5">
         <h3 class="text-warning">Order Now</h3>
     </div>
+    <div id="chatbot-icon">
+      <a href="chat.html"><img src="bot.png" alt="Chatbot Icon">
+       <p>Do you want to order something?</p></a>
+   </div>
+
+   <script>
+       document.getElementById("chatbot-icon").addEventListener("click", function() {
+           openChat();
+       });
+
+       function openChat() {
+           // Code to open the chat window
+           document.getElementById("chat-container").style.display = 'block';
+       }
+   </script>
+   
 
     <!-- Note -->
     <div class="container my-5">

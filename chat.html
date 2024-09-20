@@ -1,0 +1,408 @@
+<html lang="en"></html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chatbot Order System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Chat interface -->
+    <div id="chat-container">
+        <div class="chat-box" id="chat-box">
+            <!-- Chat messages will appear here -->
+        </div>
+        <div>
+            <input type="text" id="user-input" placeholder="Type your message here...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <!-- JavaScript for chatbot functionality -->
+    <script>
+        let order = [];
+
+        // Function to handle sending and receiving messages
+        function sendMessage() {
+            const userMessage = document.getElementById("user-input").value;
+
+            if (userMessage.trim() === "") {
+                return;  // Prevent sending empty messages
+            }
+
+            displayMessage(userMessage, "user");
+
+            const botMessage = generateBotResponse(userMessage);
+            setTimeout(() => {
+                displayMessage(botMessage, "bot");
+            }, 500); // Delay for a more natural conversation
+
+            document.getElementById("user-input").value = "";  // Clear the input field
+        }
+
+        // Function to display messages in the chat box
+        function displayMessage(message, sender) {
+            const chatBox = document.getElementById("chat-box");
+            const messageElement = document.createElement("p");
+            messageElement.className = sender;
+            messageElement.innerText = message;
+            chatBox.appendChild(messageElement);
+
+            // Scroll to the bottom of the chat
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+
+        // Function to generate bot responses based on user input
+        function generateBotResponse(userMessage) {
+            let response = "";
+
+            // Menu listing
+            const menu = `
+            Products and Prices:
+            - Samosa: Rs. 300 per dozen
+            - Jalebi: Rs. 700 per Kg
+            - Pakoray: Rs. 700 per Kg
+            - Halva puri: Rs. 220 per Bf.
+            - Desi lado: Rs. 1000 per Kg
+            - Gulab Jamun: Rs. 1500 per Kg
+            - Barfi: Rs. 1500 per Kg
+            - Namak pary: Rs. 700 per Kg
+            - Shakar pary: Rs. 700 per Kg
+            - Lahori chany: Rs. 700 per Kg
+            - Halva (milk): Rs. 700 per Kg
+            - Frozen Samosa (potato): Rs. 240 per dozen
+            - Frozen Samosa (vegetable): Rs. 300 per dozen
+            - Frozen Samosa (beef): Rs. 400 per dozen
+            - Samosa patti: Rs. 400 per Kg
+            `;
+
+            // Responding to the menu request
+            if (userMessage.toLowerCase().includes("menu") || userMessage.toLowerCase().includes("what do you have")) {
+                response = menu;
+            }
+            else if (userMessage.toLowerCase().includes("hello")) {
+    response = "Hello! Welcome to PARSA. How can I assist you with your order today?";
+            }
+const greetingsResponses = {
+  "hi": "Hello! How can I assist you today?",
+  "hello": "Hi there! What would you like to order?",
+  "aslam-o-alikum": "Wa alaykumu as-salam! How can I help you today?",
+  "good morning": "Good morning! Ready to order some delicious treats?",
+  "good afternoon": "Good afternoon! What can I get for you today?",
+  "good evening": "Good evening! Looking for something tasty?",
+  "hey": "Hey there! Need help with your order?",
+  "howdy": "Howdy! What can I assist you with today?",
+  "what's up?": "Not much! Just waiting to take your order. What would you like?",
+  "hi there": "Hi there! How can I help you today?",
+  "greetings": "Greetings! How can I assist you today?",
+  "salutations": "Salutations! What can I do for you?",
+};
+
+function respondToGreeting(userInput) {
+  const lowerInput = userInput.toLowerCase().trim(); // Normalize input
+  const response = greetingsResponses[lowerInput];
+  
+  if (response) {
+    return response;
+  } else {
+    return "I'm sorry, I didn't understand that. You can ask for the menu or start your order.";
+  }
+}
+
+// Example usage
+const userInput = "hello"; // Replace with actual user input
+console.log(respondToGreeting(userInput)); 
+
+ if (userMessage.toLowerCase().includes("hi")) {
+    response = "Hi there! What would you like to order today?";
+}
+else if (userMessage.toLowerCase().includes("aslam-o-alikum") || userMessage.toLowerCase().includes("assalamu alaikum")) {
+    response = "Wa Alaikum Assalam! How can I help you with your order?";
+}
+else if (userMessage.toLowerCase().includes("good morning")) {
+    response = "Good morning! What can I get for you today?";
+}
+else if (userMessage.toLowerCase().includes("good evening")) {
+    response = "Good evening! Ready to place your order?";
+}
+else if (userMessage.toLowerCase().includes("desi lado")) {
+    response = "Desi lado is a delicious choice! How much would you like to order (in kg)?";
+    order.push("Desi lado");
+}
+else if (userMessage.toLowerCase().includes("gulab jamun")) {
+    response = "Sweet choice! How many kg of Gulab Jamun would you like to order?";
+    order.push("Gulab Jamun");
+}
+else if (userMessage.toLowerCase().includes("barfi")) {
+    response = "Barfi is a great choice! How many kg of Barfi would you like to order?";
+    order.push("Barfi");
+}
+else if (userMessage.toLowerCase().includes("namak pary")) {
+    response = "How much Namak pary would you like to order (in kg)?";
+    order.push("Namak pary");
+}
+else if (userMessage.toLowerCase().includes("shakar pary")) {
+    response = "Shakar pary is a perfect snack! How much would you like to order (in kg)?";
+    order.push("Shakar pary");
+}
+else if (userMessage.toLowerCase().includes("lahori chany")) {
+    response = "How many servings of Lahori chany would you like?";
+    order.push("Lahori chany");
+}
+else if (userMessage.toLowerCase().includes("halva (milk)")) {
+    response = "Milk Halva is a delicious treat! How much would you like to order (in kg)?";
+    order.push("Halva (milk)");
+}
+else if (userMessage.toLowerCase().includes("frozen samosa (potato)")) {
+    response = "How many dozen potato samosas would you like to order?";
+    order.push("Frozen Samosa (potato)");
+}
+else if (userMessage.toLowerCase().includes("frozen samosa (vegetable)")) {
+    response = "How many dozen vegetable samosas would you like to order?";
+    order.push("Frozen Samosa (vegetable)");
+}
+else if (userMessage.toLowerCase().includes("frozen samosa (beef)")) {
+    response = "How many dozen beef samosas would you like to order?";
+    order.push("Frozen Samosa (beef)");
+}
+else if (userMessage.toLowerCase().includes("samosa patti")) {
+    response = "How much Samosa patti would you like to order (in kg)?";
+    order.push("Samosa patti");
+}
+else if (userMessage.toLowerCase().includes("how are you")) {
+    response = "I'm just a bot, but I'm ready to help you with your order! How can I assist you today?";
+}
+else if (userMessage.toLowerCase().includes("thank you") || userMessage.toLowerCase().includes("thanks")) {
+    response = "You're welcome! Let me know if there's anything else I can help with.";
+}
+else if (userMessage.toLowerCase().includes("who made this") || userMessage.toLowerCase().includes("who created you")) {
+    response = "I was created by PARSA to make your ordering experience easier! How can I help you with your order today?";
+}
+else if (userMessage.toLowerCase().includes("what's your name")) {
+    response = "I’m PARSA’s chatbot, your virtual assistant for placing orders. What would you like to order today?";
+}
+else if (userMessage.toLowerCase().includes("what's your purpose")) {
+    response = "My job is to help you browse through our menu and place orders easily! Just let me know what you need.";
+}
+else if (userMessage.toLowerCase().includes("what do you recommend")) {
+    response = "I recommend trying our freshly made Jalebi or our delicious Gulab Jamun. They’re customer favorites!";
+}
+else if (userMessage.toLowerCase().includes("what's popular")) {
+    response = "Our Samosas and Halva Puri are very popular! Would you like to order some?";
+}
+else if (userMessage.toLowerCase().includes("are you open") || userMessage.toLowerCase().includes("opening hours")) {
+    response = "Yes, we are open from 9 AM to 9 PM. You can place an order anytime!";
+}
+else if (userMessage.toLowerCase().includes("is this available") || userMessage.toLowerCase().includes("do you have this")) {
+    response = "Let me check for you! If it's on our menu, it's available for order. What would you like to get?";
+}
+else if (userMessage.toLowerCase().includes("i had a problem") || userMessage.toLowerCase().includes("issue")) {
+    response = "I'm sorry to hear that! Please share the issue, and we will work on resolving it immediately.";
+}
+else if (userMessage.toLowerCase().includes("order was wrong") || userMessage.toLowerCase().includes("wrong order")) {
+    response = "We apologize for any inconvenience. Can you please provide details about your order? We'll fix it right away.";
+}
+else if (userMessage.toLowerCase().includes("refund") || userMessage.toLowerCase().includes("return")) {
+    response = "For refunds or returns, please contact our customer service. I'll forward your request.";
+}
+else if (userMessage.toLowerCase().includes("where's my order") || userMessage.toLowerCase().includes("when will my order arrive")) {
+    response = "Let me check the status of your order. I’ll get back to you shortly!";
+}
+else if (userMessage.toLowerCase().includes("how long will it take")) {
+    response = "It usually takes 30-45 minutes for delivery. Would you like to continue placing your order?";
+}
+else if (userMessage.toLowerCase().includes("can i change my order") || userMessage.toLowerCase().includes("edit order")) {
+    response = "No problem! Just let me know what changes you’d like to make.";
+}
+else if (userMessage.toLowerCase().includes("tell me a joke")) {
+    response = "Why did the samosa go to the party? Because it wanted to spice things up!";
+}
+else if (userMessage.toLowerCase().includes("you're funny") || userMessage.toLowerCase().includes("lol")) {
+    response = "Thanks! I'm here to bring a little flavor to your day. Now, what would you like to order?";
+}
+else if (userMessage.toLowerCase().includes("are you human")) {
+    response = "No, I’m just a chatbot, but I’m happy to help you with your order!";
+} 
+else if (userMessage.includes("are you human") || userMessage.includes("are you a human")) {
+    response = "I'm just a chatbot here to help with your order! But I try my best to assist like a human.";
+}
+else if (userMessage.includes("your name") || userMessage.includes("who are you")) {
+    response = "I'm PARSA's order assistant! How can I help you today?";
+}
+else if (userMessage.includes("are you a robot")) {
+    response = "Yes, I'm a friendly bot made to help you place your orders easily.";
+}
+else if (userMessage.includes("how are you")) {
+    response = "I'm doing great, thank you! How can I assist you today?";
+}
+else if (userMessage.includes("thank you") || userMessage.includes("thanks")) {
+    response = "You're welcome! Let me know if you need anything else.";
+}
+else if (userMessage.includes("what can you do")) {
+    response = "I can help you place orders from PARSA! You can ask for the menu or tell me what you'd like to order.";
+}
+else if (userMessage.includes("delivery")) {
+    response = "Yes, delivery is available! We can confirm the details after placing your order.";
+}
+else if (userMessage.includes("order more") || userMessage.includes("something else")) {
+    response = "Sure! What else would you like to add to your order?";
+}
+else if (userMessage.includes("delivery") || userMessage.includes("deliver") || userMessage.includes("ship") || userMessage.includes("send")) {
+    response = "Yes, we offer delivery! I can help you confirm the details after placing your order.";
+}
+else if (userMessage.includes("order") || userMessage.includes("buy") || userMessage.includes("get")) {
+    response = "Sure! What would you like to order from our menu?";
+}
+else if (userMessage.includes("how much") && previousMessage.includes("samosa")) {
+    response = "Samosas are Rs. 300 per dozen. How many would you like to order?";
+}
+else if (userMessage.includes("I want to order") && !userMessage.includes("what")) {
+    response = "Could you please clarify what you'd like to order? You can check our menu for options.";
+}
+else if (userMessage.includes("no thanks") || userMessage.includes("nothing else") || userMessage.includes("that's all")) {
+    response = "Got it! I'll proceed with the order. Would you like to confirm?";
+}
+else if (userMessage.toLowerCase().includes("jalebi")) {
+    response = "Yummy! How much jalebi would you like to order (in kg)?";
+    order.push("Jalebi");
+}
+let lastItem = null;  // Track the last ordered item
+
+if (userMessage.includes("samosa")) {
+    response = "Great choice! How many dozen samosas would you like to order?";
+    lastItem = "samosa";
+} else if (userMessage.includes("how much") && lastItem === "samosa") {
+    response = "Samosas are Rs. 300 per dozen. How many would you like?";
+}
+else if (userMessage.includes("confirm order")) {
+    let orderSummary = order.join(", ");
+    response = `You have ordered: ${orderSummary}. Would you like to confirm or make any changes?`;
+}
+else if (userMessage.includes("order something")) {
+    response = "Sure! Could you please specify what you'd like to order from our menu?";
+}
+else if (userMessage.toLowerCase().includes("are you human") || userMessage.toLowerCase().includes("are you a human")) {
+    response = "I'm an AI created to assist you with your order! But I can help you like a human would.";
+}
+else if (userMessage.toLowerCase().includes("are you human") || userMessage.toLowerCase().includes("are you a human")) {
+    response = "I'm an AI created to assist you with your order! But I can help you like a human would.";
+} 
+else if (userMessage.toLowerCase().includes("please")) {
+    response = "Of course! I'd be happy to help. What can I do for you today?";
+}
+else if (userMessage.toLowerCase().includes("thank you") || userMessage.toLowerCase().includes("thanks")) {
+    response = "You're very welcome! Is there anything else I can help you with?";
+}
+else if (userMessage.toLowerCase().includes("how are you") || userMessage.toLowerCase().includes("how do you do")) {
+    response = "I'm doing great, thank you! How can I assist you today?";
+}
+else if (userMessage.toLowerCase().includes("who made you") || userMessage.toLowerCase().includes("who created you")) {
+    response = "I was created to help you place your orders with PARSA! Would you like to see the menu?";
+}
+else if (userMessage.toLowerCase().includes("can you help me") || userMessage.toLowerCase().includes("i need help")) {
+    response = "Absolutely! Let me know what you'd like to order or how I can assist.";
+}
+else if (userMessage.toLowerCase().includes("how much") || userMessage.toLowerCase().includes("price")) {
+    response = "I can give you the prices for our items! Just ask for the menu, or tell me which product you're interested in.";
+}
+else if (userMessage.toLowerCase().includes("what can you do")) {
+    response = "I can assist with placing your orders, provide product prices, and answer questions about our menu. What would you like to do?";
+}
+else if (userMessage.toLowerCase().includes("price of samosa") || userMessage.toLowerCase().includes("how much is samosa")) {
+    response = "Samosas are Rs. 300 per dozen. How many dozen would you like to order?";
+}
+else if (userMessage.toLowerCase().includes("price of jalebi") || userMessage.toLowerCase().includes("how much is jalebi")) {
+    response = "Jalebi is Rs. 700 per Kg. How much would you like to order?";
+}
+else if (userMessage.toLowerCase().includes("price of pakoray") || userMessage.toLowerCase().includes("how much are pakoray")) {
+    response = "Pakoray are Rs. 700 per Kg. How many kgs would you like to order?";
+}
+else if (userMessage.toLowerCase().includes("price of halva puri") || userMessage.toLowerCase().includes("how much is halva puri")) {
+    response = "Halva puri is Rs. 220 per breakfast. How many servings would you like to order?";
+}
+else if (userMessage.toLowerCase().includes("price of desi lado") || userMessage.toLowerCase().includes("how much is desi lado")) {
+    response = "Desi lado is Rs. 1000 per Kg. How much would you like to order?";
+}
+else if (userMessage.toLowerCase().includes("price of gulab jamun") || userMessage.toLowerCase().includes("how much is gulab jamun")) {
+    response = "Gulab Jamun is Rs. 1500 per Kg. How much would you like to order?";
+}
+else if (userMessage.toLowerCase().includes("price of barfi") || userMessage.toLowerCase().includes("how much is barfi")) {
+    response = "Barfi is Rs. 1500 per Kg. How many kgs would you like to order?";
+}
+else if (userMessage.toLowerCase().includes("price of namak pary") || userMessage.toLowerCase().includes("how much is namak pary")) {
+    response = "Namak pary is Rs. 700 per Kg. How much would you like to order?";
+}
+else if (userMessage.toLowerCase().includes("price of shakar pary") || userMessage.toLowerCase().includes("how much is shakar pary")) {
+    response = "Shakar pary is Rs. 700 per Kg. How many kgs would you like to order?";
+}
+else if (userMessage.toLowerCase().includes("price of lahori chany") || userMessage.toLowerCase().includes("how much is lahori chany")) {
+    response = "Lahori chany is Rs. 700 per Kg. How much would you like to order?";
+}
+else if (userMessage.toLowerCase().includes("price of halva (milk)") || userMessage.toLowerCase().includes("how much is halva milk")) {
+    response = "Halva (milk) is Rs. 700 per Kg. How many kgs would you like to order?";
+}
+else if (userMessage.toLowerCase().includes("price of frozen samosa (potato)") || userMessage.toLowerCase().includes("how much is frozen samosa potato")) {
+    response = "Frozen Samosa (potato) is Rs. 240 per dozen. How many dozen would you like to order?";
+}
+else if (userMessage.toLowerCase().includes("price of frozen samosa (vegetable)") || userMessage.toLowerCase().includes("how much is frozen samosa vegetable")) {
+    response = "Frozen Samosa (vegetable) is Rs. 300 per dozen. How many dozen would you like to order?";
+}
+else if (userMessage.toLowerCase().includes("price of frozen samosa (beef)") || userMessage.toLowerCase().includes("how much is frozen samosa beef")) {
+    response = "Frozen Samosa (beef) is Rs. 400 per dozen. How many dozen would you like to order?";
+}
+else if (userMessage.toLowerCase().includes("price of samosa patti") || userMessage.toLowerCase().includes("how much is samosa patti")) {
+    response = "Samosa patti is Rs. 400 per Kg. How many kgs would you like to order?";
+}
+            // Handling specific orders
+            else if (userMessage.toLowerCase().includes("samosa")) {
+                response = "Great choice! How many dozen samosas would you like to order?";
+                order.push("Samosa");
+            } 
+            else if (userMessage.toLowerCase().includes("jalebi")) {
+                response = "Yummy! How much jalebi would you like to order (in kg)?";
+                order.push("Jalebi");
+            } 
+            else if (userMessage.toLowerCase().includes("pakoray")) {
+                response = "How much pakoray would you like to order (in kg)?";
+                order.push("Pakoray");
+            }
+            else if (userMessage.toLowerCase().includes("halva puri")) {
+                response = "How many servings of halva puri would you like?";
+                order.push("Halva puri");
+            } 
+            // Continue for other products...
+
+            // Handling order confirmation
+            else if (userMessage.match(/\d+/)) {
+                response = "Got it. Would you like to order something more?";
+            }
+
+            // Handling yes/no for additional orders
+            else if (userMessage.toLowerCase().includes("yes")) {
+                response = "What would you like to order more?";
+            } 
+            else if (userMessage.toLowerCase().includes("no")) {
+                finalizeOrder();
+                return "Thank you! Your order has been submitted successfully.";
+            }
+
+            // Default fallback response
+            else {
+                response = "I'm sorry, I didn't understand that. You can ask for the menu or start your order.";
+            }
+
+            return response;
+        }
+
+        // Function to finalize the order and submit it via WhatsApp
+        function finalizeOrder() {
+            let orderSummary = "Order Summary: " + order.join(", ");
+            const encodedMessage = encodeURIComponent(orderSummary);
+            const whatsappNumber = "923025138393";  // Your WhatsApp number here
+            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+            window.open(whatsappURL, '_blank');
+        }
+    </script>
+</body>
+</html>
