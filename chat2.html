@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PARSA Orderbot</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+
+                      <!-- favicon link -->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="manifest" href="site.webmanifest">
+
+          <!-- fontawesome link -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        /* ... (your existing CSS) */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+        #chat-container {
+            width: 80%;
+            margin: 50px auto;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 600px;
+        }
+        #chat-box {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            border-bottom: 1px solid #ddd;
+        }
+        .user, .bot {
+            margin: 10px 0;
+            padding: 10px 15px;
+            border-radius: 20px;
+            max-width: 80%;
+            word-wrap: break-word;
+        }
+        .user {
+            background-color: #dcf8c6;
+            align-self: flex-end;
+            text-align: right;
+        }
+        .bot {
+            background-color: #f1f0f0;
+            align-self: flex-start;
+        }
+        #input-area {
+            display: flex;
+            padding: 10px;
+        }
+        #user-input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            outline: none;
+        }
+        #send-button {
+            padding: 10px 20px;
+            margin-left: 10px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+        #send-button:hover {
+            background-color: #45a049;
+        }
+        .bill {
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #fafafa;
+            margin-top: 10px;
+        }
+        .bill img {
+            display: block;
+            margin: 0 auto 10px;
+            max-width: 30%;
+            max-height: 25%;
+        }
+        .bill h2 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .bill p {
+            margin: 5px 0;
+        }
+        .bill table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        .bill table, .bill th, .bill td {
+            border: 1px solid #ddd;
+        }
+        .bill th, .bill td {
+            padding: 8px;
+            text-align: left;
+        }
+        .bill th {
+            background-color: #f2f2f2;
+        }
+        .total {
+            text-align: right;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        @media (max-width: 768px) {
+    #chat-container {
+        width: 100%;
+        margin: 0;
+    }
+}
+    </style>
+</head>
+<body>
+
+<div id="chat-container">
+    <div id="chat-box">
+        <!-- Chat messages will appear here -->
+    </div>
+    <div id="input-area">
+        <input type="text" id="user-input" placeholder="Type your message here...">
+        <button id="send-button" onclick="sendMessage()"><i class="fa-solid fa-angle-up"></i> Send</button>
+        <button id="microphone"><i class="fa-solid fa-microphone"></i> Speak</button>
+        <div id="transcript"></div>
+    </div>
+</div>
+
+<script>
+    let order = [];
+    let lastProduct = "";
+    let userName = "";
+    let userNumber = "";
+    let initialGreetingShown = false;
+    let awaitingName = false;
+    let awaitingNumber = false;
+    let awaitingConfirmation = false;
+
+    const products = {
+        "jalebi": { price: 700, unit: "kg" },
+        "pakoray": { price: 700, unit: "kg" },
+        "pakode": { price: 700, unit: "kg" },
+        "samosa": { price: 300, unit: "dozen" },
+        "desi laddu": { price: 1000, unit: "kg" },
+        "gulab jamun": { price: 1500, unit: "kg" },
+        "barfi": { price: 1500, unit: "kg" },
+        "namak pare": { price: 700, unit: "kg" },
+        "shakkar pare": { price: 700, unit: "kg" },
+        "lahori chany": { price: 700, unit: "kg" },
+        "frozen s potato": { price: 240, unit: "dozen" },
+        "frozen s vegetable ": { price: 300, unit: "dozen" },
+        "frozen s beef": { price: 400, unit: "dozen" },
+        "s patti": { price: 400, unit: "kg" }
+    };
+
+    function sendMessage() {
+        const userMessage = document.getElementById("user-input").value;
+        if (userMessage.trim() === "") return;
+
+        addMessage(userMessage, "user");
+        document.getElementById("user-input").value = "";
+
+        const botResponse = generateBotResponse(userMessage);
+        setTimeout(() => addMessage(botResponse, "bot"), 500);
+    }
+    // Event listener for pressing 'Enter' key
+document.getElementById("user-input").addEventListener("keypress", function(e) {
+    if (e.key === 'Enter') {
+        sendMessage();
+    }
+});
+
+    function addMessage(message, sender) {
+        const messageElement = document.createElement("div");
+        messageElement.className = sender;
+        messageElement.innerHTML = message;
+        document.getElementById("chat-box").appendChild(messageElement);
+        messageElement.scrollIntoView();
+    }
+
+    function generateBotResponse(userMessage) {
+        userMessage = userMessage.toLowerCase().trim();
+        let response = "";
+
+        if (awaitingConfirmation) {
+            if (userMessage === "yes") {
+                const billHTML = generateBillHTML();
+                sendBillToWhatsApp(billHTML); // Sending bill to WhatsApp
+                downloadBillImage(); // Trigger download of the bill as an image
+                response = `Your order has been submitted successfully, ${userName}. Thank you for ordering from PARSA!`;
+            } else if (userMessage === "no") {
+                response = `Your order has been canceled. Would you like to order again?`;
+                resetOrder();
+            } else {
+                response = `Please type 'yes' to confirm or 'no' to cancel your order.`;
+            }
+            return response;
+        }
+
+        if (!initialGreetingShown) {
+            initialGreetingShown = true;
+            response = `Aslam-o-alikum, welcome to PARSA! Here is our menu:<br><br>`;
+            response += Object.keys(products).map(product => `${capitalize(product)}: Rs. ${products[product].price} per ${products[product].unit}`).join("<br>");
+            response += `<br>sf=frozen samosa. What would you like to order?`;
+            return response;
+        }
+
+        if (awaitingName) {
+            userName = userMessage.startsWith("my name is") ? userMessage.replace("my name is", "").trim() : userMessage.trim();
+            if (userName === "") {
+                response = "I didn't catch your name. Could you please provide your name?";
+                return response;
+            }
+            awaitingName = false;
+            awaitingNumber = true;
+            response = `Nice to meet you, ${userName}. Please provide your WhatsApp number (starting with 03 and 11 digits long).`;
+            return response;
+        }
+
+        if (awaitingNumber) {
+            const digits = userMessage.replace(/\D/g, "");
+            if (/^03\d{9}$/.test(digits)) {
+                userNumber = digits;
+                awaitingNumber = false;
+                response = `Thank you, ${userName}. Here's your bill:<br><br>`;
+                response += generateBillHTML();
+                awaitingConfirmation = true;
+                return response;
+            } else {
+                response = "The WhatsApp number you provided is invalid. Please ensure it starts with '03' and is 11 digits long.";
+                return response;
+            }
+        }
+
+        if (userMessage.includes("confirm")) {
+            if (order.length === 0) {
+                response = "You don't have any items in your order.";
+            } else {
+                awaitingName = true;
+                response = "What’s your name? (reply as 'my name is x')";
+            }
+            return response;
+        }
+
+        if (userMessage.includes("menu")) {
+            response = `Here’s our menu:<br><br>`;
+            response += Object.keys(products).map(product => `${capitalize(product)}: Rs. ${products[product].price} per ${products[product].unit}`).join("<br>");
+            response += `<br>Would you like to order something?`;
+            return response;
+        }
+
+        const productQuantityRegex = /(\d+(\.\d+)?)\s*(dozen|kg|kilo|grams?|g|darjan)?\s*([a-zA-Z\s]+)/g;
+        let match;
+        let foundProducts = [];
+
+        while ((match = productQuantityRegex.exec(userMessage)) !== null) {
+            let quantity = parseFloat(match[1]);
+            let unit = match[3] ? match[3].toLowerCase() : '';
+            let productName = match[4].trim().toLowerCase();
+
+            if (unit.startsWith("g")) unit = "grams";
+            if (unit.endsWith("s")) unit = unit.slice(0, -1);
+            if (!unit) unit = products[productName] ? products[productName].unit : '';
+
+            if (products[productName]) {
+                order.push({ name: productName, quantity: quantity, unit: unit || products[productName].unit });
+                foundProducts.push(`${quantity} ${unit} ${productName}`);
+            }
+        }
+
+        if (foundProducts.length > 0) {
+            response = `You have ordered: ${foundProducts.join(", ")}. Would you like to add more items or confirm your order?`;
+            return response;
+        } else {
+            response = "I didn't understand that. Could you please specify the product name and quantity? For example: '2 dozen samosas'.";
+            return response;
+        }
+    }
+
+    function capitalize(str) {
+        return str.charAt(0).toUpperCase() + str.slice(1);
+    }
+
+    function generateBillHTML() {
+        let total = 0;
+        let billHTML = `<div id='bill' class='bill'><img src='parsa.jpg' alt='PARSA Logo'><h2>Bill Summary</h2><p>Name: ${userName}</p><p>WhatsApp: ${userNumber}</p>`;
+        billHTML += `<table><tr><th>Product</th><th>Quantity</th><th>Unit Price</th><th>Total</th></tr>`;
+        order.forEach(item => {
+            let price = products[item.name].price;
+            let totalItem = price * item.quantity;
+            total += totalItem;
+            billHTML += `<tr><td>${capitalize(item.name)}</td><td>${item.quantity} ${item.unit}</td><td>Rs. ${price}</td><td>Rs. ${totalItem}</td></tr>`;
+        });
+        billHTML += `</table><div class='total'>Total: Rs. ${total} <br><br> Thank you for ordering from PARSA! <br> (type 'yes' to submit or 'no' to cancel)</div></div>`;
+        return billHTML;
+    }
+
+    // Function to download the bill as an image
+    function downloadBillImage() {
+        const billElement = document.getElementById("bill");
+        html2canvas(billElement).then(function (canvas) {
+            const link = document.createElement("a");
+            link.download = "bill.png";
+            link.href = canvas.toDataURL();
+            link.click();
+        });
+    }
+
+    // Your WhatsApp number
+    const ownerWhatsAppNumber = "923025138393";
+
+    // Function to send WhatsApp message
+    function sendBillToWhatsApp(orderSummary) {
+        // Generating WhatsApp API link to send the message
+        const message = `Hello! A new order has been placed. Order details:\n${orderSummary}`;
+        const whatsappUrl = `https://api.whatsapp.com/send?phone=${ownerWhatsAppNumber}&text=${encodeURIComponent(message)}`;
+
+        // Redirect user to WhatsApp
+        window.open(whatsappUrl, '_blank');
+    }
+
+    function resetOrder() {
+        order = [];
+        lastProduct = "";
+        userName = "";
+        userNumber = "";
+        initialGreetingShown = false;
+        awaitingName = false;
+        awaitingNumber = false;
+        awaitingConfirmation = false;
+    }
+</script>
+<script>
+    // Function to process user speech
+function processUserMessage(userSpeech) {
+    document.getElementById("user-input").value = userSpeech;
+    sendMessage();
+}
+
+// Speech Recognition Logic
+if ('webkitSpeechRecognition' in window) {
+    const recognition = new webkitSpeechRecognition();
+    recognition.lang = 'en-US'; // Default language
+    recognition.interimResults = false;
+    recognition.continuous = false;
+
+    document.getElementById('microphone').addEventListener('click', () => {
+        recognition.start();
+    });
+
+    recognition.onresult = (event) => {
+        const userSpeech = event.results[0][0].transcript;
+        processUserMessage(userSpeech); // Process speech input
+    };
+
+    recognition.onerror = (event) => console.error('Speech recognition error:', event.error);
+    recognition.onend = () => console.log('Speech recognition ended.');
+} else {
+    console.error("Speech recognition is not supported by this browser.");
+}
+
+// Language Switcher
+function switchLanguage(lang) {
+    if (lang === 'urdu') {
+        recognition.lang = 'ur-PK';
+    } else {
+        recognition.lang = 'en-US';
+    }
+}
+
+    </script>
+
+
+</body>
+</html>

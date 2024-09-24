@@ -128,23 +128,7 @@
     <!-- Order Now -->
     <div class=" text-center my-5">
         <h3 class="text-warning">Order Now</h3>
-    </div>
-    <div id="chatbot-icon">
-      <a href="chat.html"><img src="bot.png" alt="Chatbot Icon">
-       <p>Do you want to order something?</p></a>
-   </div>
 
-   <script>
-       document.getElementById("chatbot-icon").addEventListener("click", function() {
-           openChat();
-       });
-
-       function openChat() {
-           // Code to open the chat window
-           document.getElementById("chat-container").style.display = 'block';
-       }
-   </script>
-   
 
     <!-- Note -->
     <div class="container my-5">
@@ -153,7 +137,7 @@
     </div>
 
     <!-- Order Form -->
-    <div class="container my-5">
+    <div id="form" class="container my-5">
     <h4 class="text-warning">Select Your Order</h4>
     <!-- Name input -->
     <label for="customerName" class="mt-3">Your Name:</label>
@@ -189,7 +173,7 @@
     </select>
 
     <!-- Jalebi in kg -->
-    <label for="jalebi" class="mt-3">Jalebi (in 250g increments):</label>
+    <label for="jalebi" class="mt-3">Jalebi (in 250g increasements):</label>
     <select id="jalebi" class="form-control">
         <option value="0">0g</option>
         <option value="250">250g</option>
@@ -235,7 +219,7 @@
     </select>
 
     <!-- Pakoray in kg -->
-    <label for="pakoray" class="mt-3">Pakoray (in 250g increments):</label>
+    <label for="pakoray" class="mt-3">Pakoray (in 250g increasements):</label>
     <select id="pakoray" class="form-control">
         <option value="0">0g</option>
         <option value="250">250g</option>
@@ -280,7 +264,7 @@
         <option value="10000">10 kg</option>
     </select>
     <!-- Desi Ladoo in kg -->
-<label for="desiLadoo" class="mt-3">Desi Ladoo (in 250g increments):</label>
+<label for="desiLadoo" class="mt-3">Desi Ladoo (in 250g increasements):</label>
 <select id="desiLadoo" class="form-control">
     <option value="0">0g</option>
     <option value="250">250g</option>
@@ -325,7 +309,7 @@
     <option value="10000">10 kg</option>
 </select>
 <!-- Gulab Jamun in kg -->
-<label for="gulabJamun" class="mt-3">Gulab Jamun (in 250g increments):</label>
+<label for="gulabJamun" class="mt-3">Gulab Jamun (in 250g increasements):</label>
 <select id="gulabJamun" class="form-control">
     <option value="0">0g</option>
     <option value="250">250g</option>
@@ -370,7 +354,7 @@
     <option value="10000">10 kg</option>
 </select>
 <!-- Barfi in kg -->
-<label for="barfi" class="mt-3">Barfi (in 250g increments):</label>
+<label for="barfi" class="mt-3">Barfi (in 250g increasements):</label>
 <select id="barfi" class="form-control">
     <option value="0">0g</option>
     <option value="250">250g</option>
@@ -415,7 +399,7 @@
     <option value="10000">10 kg</option>
 </select>
 <!-- Namak Pary in kg -->
-<label for="namakPary" class="mt-3">Namak Pary (in 250g increments):</label>
+<label for="namakPary" class="mt-3">Namak Pary (in 250g increasements):</label>
 <select id="namakPary" class="form-control">
     <option value="0">0g</option>
     <option value="250">250g</option>
@@ -460,7 +444,7 @@
     <option value="10000">10 kg</option>
 </select>
 <!-- Shakar Pary in kg -->
-<label for="shakarPary" class="mt-3">Shakar Pary (in 250g increments):</label>
+<label for="shakarPary" class="mt-3">Shakar Pary (in 250g increasements):</label>
 <select id="shakarPary" class="form-control">
     <option value="0">0g</option>
     <option value="250">250g</option>
@@ -504,7 +488,7 @@
     <option value="9750">9.75 kg</option>
     <option value="10000">10 kg</option>
 </select>
-<label for="lahoriChany" class="mt-3">Lahori Chany (in 250g increments):</label>
+<label for="lahoriChany" class="mt-3">Lahori Chany (in 250g increasements):</label>
 <select id="lahoriChany" class="form-control">
     <option value="0">0g</option>
     <option value="250">250g</option>
@@ -549,7 +533,7 @@
     <option value="10000">10 kg</option>
 </select>
 <!-- Halva (Milk) in kg -->
-<label for="halvaMilk" class="mt-3">Halva (Milk) (in 250g increments):</label>
+<label for="halvaMilk" class="mt-3">Halva (Milk) (in 250g increasements):</label>
 <select id="halvaMilk" class="form-control">
     <option value="0">0g</option>
     <option value="250">250g</option>
@@ -594,7 +578,7 @@
     <option value="10000">10 kg</option>
 </select>
 <!-- Samosa (Potato) in dozens -->
-<label for="samosaPotato" class="mt-3">Samosa (Potato) (in dozens):</label>
+<label for="samosaPotato" class="mt-3">Frozen Samosa (Potato) (in dozens):</label>
 <select id="samosaPotato" class="form-control">
     <option value="0">0 dozen</option>
     <option value="1">1 dozen</option>
@@ -610,7 +594,7 @@
 </select>
 
 <!-- Samosa (Vegetable) in dozens -->
-<label for="samosaVegetable" class="mt-3">Samosa (Vegetable) (in dozens):</label>
+<label for="samosaVegetable" class="mt-3">Frozen Samosa (Vegetable) (in dozens):</label>
 <select id="samosaVegetable" class="form-control">
     <option value="0">0 dozen</option>
     <option value="1">1 dozen</option>
@@ -626,7 +610,7 @@
 </select>
 
 <!-- Samosa (Beef) in dozens -->
-<label for="samosaBeef" class="mt-3">Samosa (Beef) (in dozens):</label>
+<label for="samosaBeef" class="mt-3">Frozen Samosa (Beef) (in dozens):</label>
 <select id="samosaBeef" class="form-control">
     <option value="0">0 dozen</option>
     <option value="1">1 dozen</option>
@@ -741,6 +725,10 @@
            window.location.href = whatsappUrl;
        });
    </script>
+   <footer class="container text-center my-5">
+           <hr class="my-4 bg-success">
+           <p>&copy; 2024 PARSA Refreshments. All Rights Reserved.</p>
+       </footer>
 
 
 </body>
