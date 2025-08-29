@@ -1,340 +1,137 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PARSA MENU</title>
-    <link rel="icon" href="favicon.ico" type="image/png">
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/bstyles.css"> <!-- Your custom CSS -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>PARSA Menu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome (icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="" crossorigin="anonymous" />
+  <link rel="stylesheet" href="css/bstyles.css">
+ <link rel="stylesheet" href="css/styles.css">
 </head>
-<body class="bg-dark text-white">
 
-                         <!-- Bootstrap 5.3 JS and dependencies -->
+<body>
 
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
-
-
-    <!-- Navbar -->
-
-    </nav>
-    <nav class="navbar navbar-expand-lg bg-body-success">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#"> <img src="favicon.ico" alt="logo"> </a>
-        <a class="navbar-brand" href="#">PARSA</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-            </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-            <a class="nav-link "  href="index.html">Home</a>
-        </li>
-              <li class="nav-item">
-          <a class="nav-link active" href="prices.html">Prices</a>
-              </li>
-            </nav>
-
-
-
-
-    <!-- Menu Header -->
-    <div class="container text-center my-5">
-        <h1 class="display-4 text-warning">PARSA</h1>
-        <h2 class="display-5 text-light">MENU</h2>
+  <!-- NAVBAR -->
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="index.html">
+        <img src="favicon.ico" alt="PARSA logo" class="brand-logo">
+        <span class="brand-text"><span class="brand-red">PARSA</span></span>
+      </a>
+      
+  <div class="cart" onclick="goCart()">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAABm0lEQVR4nO2VO0sDQRSFP2NAbXzhqxINErFRiIViIYhB0UYURbAT7MVKf0BIYyNBREsr0VZURBAbSWdhk0Kw08JCCwvBV2TgFMuSbCabIZUfXIYsZ+/Jzty5F/6pMo3AJJAE4tU0PgbynjgF6qthPAUcKHIy36LKDMj40fd8D7gKGRdAGmgKMo4AP8AXUKNnUeDFdxxh4k75i5KVsM9XgLGQEQdulHM8yHhXokXcsa+c00GiNYlSDo2zytkTJBqW6MyRaQR4B948dVOQOuATeHJk3K8PMedcknuJOx0YLyvXjo340KYYLEkr16qNeEPiTQfG58qVsBFPSHzkwPhZDcmq/7cAv8BDhaZd+gBTM9bc6qW5CoxTyrFdzkszwLd696VnghWLDNCme2um27VMX9U6y2JJ99l2EJg/261jymvMjhGSqMZlskQkPJ1pBBgEasOaehnSNTMJizELrAMdOCIGfGj7zNpbQLPi2fJcqb5sy4LvLOcLaDI+TSsOaNadzms1v/2MagoZzQkOaVABmbUY7aoFJ9v8D5XyBy6eialmVpaEAAAAAElFTkSuQmCC" alt="shopping-cart"><span class="badge" id="cart-count">0</span>
     </div>
-
-    <!-- Menu Table -->
-    <div class="container mb-5">
-      <div class="menu-table">
-
-
-        <table class="table table-dark table-striped table-bordered">
-            <thead>
-                <tr>
-                    <th>Products</th>
-                    <th>Prices</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Samosa</td>
-                    <td>R.s 350 per dozen</td>
-                </tr>
-                <tr>
-                    <td>Jalebi</td>
-                    <td>R.s 800 per Kg</td>
-                </tr>
-                <tr>
-                    <td>Pakoray</td>
-                    <td>R.s 800 per Kg</td>
-                </tr>
-                
-                <tr>
-                  <td>Frozen Samosa(potato)</td>
-                  <td>R.s 240 per dozen</td>
-                </tr>
-                
-                <tr>
-                  <td>Samosa patti</td>
-                  <td>R.s 400 per Kg</td>
-                </tr>
-            </tbody>
-        </table>
-        </div>
+      
     </div>
+    
+  </header>
 
-    <!-- Order Now -->
-    <div class=" text-center my-5">
-        <h3 class="text-warning">Order Now</h3>
+  <div class="menu-grid" id="menu">
+    <!-- Cards will be injected here -->
+  </div>
 
+<script>
+const items = [
+  { name: 'Big Samosa', price: 600, unit: '/12', variant: 'card--sunset', img: 'samosa big.webp', desc: ' Our samosas are the best because we only use premium Dalda Banaspati to fry them, making them golden and crispy, not greasy. We fill them with high-quality ingredients and make sure everything is clean and hygienic.', link: 'product-big-samosa.html' },
+  { name: 'Small Samosa', price: 350, unit: '/12', variant: 'card--yellow', img: 'samosa.webp', desc: 'Mini samosas for light snacking.', link: 'product-small-samosa.html' },
+  { name: 'Makhan Jalebi', price: 800, unit: '/kg', variant: 'card--orange', img: 'jalebi.webp', desc: 'Our jalebis are made with the best ingredients and fried to a perfect crisp in premium Dalda Banaspati. They are sweet and delicious, giving you the traditional taste you love, made with the highest quality standards.', link: 'product-jalebi.html' },
+  { name: 'Pakoray', price: 800, unit: '/kg', variant: 'card--golden', img: 'pakoray.webp', desc: 'We make our pakoray with pure basin and other top-quality ingredients. They are fried in premium Dalda Banaspati so they are crispy and flavorful, not heavy or oily. We always follow strict hygiene rules.', link: 'product-pakoray.html' },
+  { name: 'Chicken Roll', price: 480, unit: '/6', variant: 'card--spice', img: 'chicken roll.webp', desc: 'Our chicken rolls are a customer favourite because they are filled with pure, juicy chicken—no other fillers. We fry them in premium Dalda Banaspati and prepare everything under strict hygienic conditions.', link: 'product-chicken-roll.html' },
+  { name: 'Namak Paray', price: 800, unit: '/kg', variant: 'card--lavender', img: 'namak pary.webp', desc: 'Craving a salty crunch? Our namak pary are the perfect snack. We make them using the best ingredients and fry them in premium Dalda Banaspati, so they are crispy and delicious, not greasy.', link: 'product-namak-paray.html' },
+  { name: 'Shakar Paray', price: 800, unit: '/kg', variant: 'card--leaf', img: 'shakar pary.webp', desc: 'For a sweet treat, try our shakar pary. They are made with quality ingredients, so you get a sweet, crispy snack that is clean and safe to eat.', link: 'product-shakar-paray.html' },
+  { name: 'Frozen Chicken Roll', price: 420, unit: '/6', variant: 'card--mint', img: 'frozen chicken roll.webp', desc: 'Craving our chicken rolls? Keep a pack in your freezer! These are filled with only pure chicken and no fillers. You can fry them yourself in premium Dalda Banaspati for a fresh, hot, and healthy snack anytime you want.', link: 'product-frozen-chicken-roll.html' },
+  { name: 'Frozen Samosa', price: 240, unit: '/12', variant: 'card--mint-2', img: 'frozen samosa.webp', desc: 'Enjoy our famous samosas at home! We make them with the same high-quality ingredients and strict hygiene as our fresh ones. Just fry them in premium Dalda Banaspati whenever you like for a crispy, healthy, and delicious snack', link: 'product-frozen-samosa.html' },
+  { name: 'Samosa Patti', price: 400, unit: '/kg', variant: 'card--rose', img: 'samosa patti.webp', desc: 'Thin sheets for making samosas.', link: 'product-samosa-patti.html' }
+];
 
-    <!-- Note -->
-    <div class="container my-5">
-        <h4 class="text-warning">Note</h4>
-        <p>The order only be delivered in these areas i.e <strong>Jinnah Garden Islamabad and Naval Anchorage Islamabad</strong>. The delivery charges in Jinnah garden is R.s 100 and in Naval Anchorage is 150. <strong>Halva puri is not deliverable</strong>.</p>
+const menu = document.getElementById('menu');
+const cartCount = document.getElementById('cart-count');
+
+const updateCount = () => {
+  const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+  const c = cart.reduce((sum, item) => sum + item.qty, 0);
+  cartCount.innerText = c;
+};
+
+items.forEach(item => {
+  const c = document.createElement('div');
+  c.className = `card ${item.variant}`;
+  c.innerHTML = `
+    <div class="left">
+      <div class="title">${item.name}</div>
+      <div class="desc">${item.desc}</div>
+      <a href="${item.link}" class="read-more">Read more</a>
     </div>
-
-    <!-- Order Form -->
-    <div id="form" class="container my-5">
-    <h4 class="text-warning">Select Your Order</h4>
-    <!-- Name input -->
-    <label for="customerName" class="mt-3">Your Name:</label>
-    <input type="text" id="customerName" class="form-control" placeholder="Enter your name">
-
-    <!-- Area with two options: Jinnah Garden and Navl -->
-    <label for="area" class="mt-3">Select Area:</label>
-    <select id="area" class="form-control">
-        <option value="Jinnah Garden">Jinnah Garden</option>
-        <option value="Navl">Navl Anchorage</option>
-    </select>
-
-    <!-- Address input -->
-    <label for="address" class="mt-3">Address:</label>
-    <input type="text" id="address" class="form-control" placeholder="Enter your address">
+    <div class="right">
+      <img src="${item.img}" alt="${item.name}">
+      <div class="price">PKR ${item.price} ${item.unit}</div
+    </div>
+    <button class="add-btn" onclick="addToCart('${item.name}', ${item.price})">+</button>
+  `;
+  menu.appendChild(c);
+});
 
 
-
-    <!-- Samosas in Dozen -->
-    <label for="samosas">Samosas (in Dozen):</label>
-    <select id="samosas" class="form-control">
-        <option value="0">0 Dozen</option>
-        <option value="1">1 Dozen</option>
-        <option value="2">2 Dozen</option>
-        <option value="3">3 Dozen</option>
-        <option value="4">4 Dozen</option>
-        <option value="5">5 Dozen</option>
-        <option value="6">6 Dozen</option>
-        <option value="7">7 Dozen</option>
-        <option value="8">8 Dozen</option>
-        <option value="9">9 Dozen</option>
-        <option value="10">10 Dozen</option>
-    </select>
-
-    <!-- Jalebi in kg -->
-    <label for="jalebi" class="mt-3">Jalebi (in 250g increasements):</label>
-    <select id="jalebi" class="form-control">
-        <option value="0">0g</option>
-        <option value="250">250g</option>
-        <option value="500">500g</option>
-        <option value="750">750g</option>
-        <option value="1000">1 kg</option>
-        <option value="1250">1.25 kg</option>
-        <option value="1500">1.5 kg</option>
-        <option value="1750">1.75 kg</option>
-        <option value="2000">2 kg</option>
-        <option value="2250">2.25 kg</option>
-        <option value="2500">2.5 kg</option>
-        <option value="2750">2.75 kg</option>
-        <option value="3000">3 kg</option>
-        <option value="3250">3.25 kg</option>
-        <option value="3500">3.5 kg</option>
-        <option value="3750">3.75 kg</option>
-        <option value="4000">4 kg</option>
-        <option value="4250">4.25 kg</option>
-        <option value="4500">4.5 kg</option>
-        <option value="4750">4.75 kg</option>
-        <option value="5000">5 kg</option>
-        <option value="5250">5.25 kg</option>
-        <option value="5500">5.5 kg</option>
-        <option value="5750">5.75 kg</option>
-        <option value="6000">6 kg</option>
-        <option value="6250">6.25 kg</option>
-        <option value="6500">6.5 kg</option>
-        <option value="6750">6.75 kg</option>
-        <option value="7000">7 kg</option>
-        <option value="7250">7.25 kg</option>
-        <option value="7500">7.5 kg</option>
-        <option value="7750">7.75 kg</option>
-        <option value="8000">8 kg</option>
-        <option value="8250">8.25 kg</option>
-        <option value="8500">8.5 kg</option>
-        <option value="8750">8.75 kg</option>
-        <option value="9000">9 kg</option>
-        <option value="9250">9.25 kg</option>
-        <option value="9500">9.5 kg</option>
-        <option value="9750">9.75 kg</option>
-        <option value="10000">10 kg</option>
-    </select>
-
-    <!-- Pakoray in kg -->
-    <label for="pakoray" class="mt-3">Pakoray (in 250g increasements):</label>
-    <select id="pakoray" class="form-control">
-        <option value="0">0g</option>
-        <option value="250">250g</option>
-        <option value="500">500g</option>
-        <option value="750">750g</option>
-        <option value="1000">1 kg</option>
-        <option value="1250">1.25 kg</option>
-        <option value="1500">1.5 kg</option>
-        <option value="1750">1.75 kg</option>
-        <option value="2000">2 kg</option>
-        <option value="2250">2.25 kg</option>
-        <option value="2500">2.5 kg</option>
-        <option value="2750">2.75 kg</option>
-        <option value="3000">3 kg</option>
-        <option value="3250">3.25 kg</option>
-        <option value="3500">3.5 kg</option>
-        <option value="3750">3.75 kg</option>
-        <option value="4000">4 kg</option>
-        <option value="4250">4.25 kg</option>
-        <option value="4500">4.5 kg</option>
-        <option value="4750">4.75 kg</option>
-        <option value="5000">5 kg</option>
-        <option value="5250">5.25 kg</option>
-        <option value="5500">5.5 kg</option>
-        <option value="5750">5.75 kg</option>
-        <option value="6000">6 kg</option>
-        <option value="6250">6.25 kg</option>
-        <option value="6500">6.5 kg</option>
-        <option value="6750">6.75 kg</option>
-        <option value="7000">7 kg</option>
-        <option value="7250">7.25 kg</option>
-        <option value="7500">7.5 kg</option>
-        <option value="7750">7.75 kg</option>
-        <option value="8000">8 kg</option>
-        <option value="8250">8.25 kg</option>
-        <option value="8500">8.5 kg</option>
-        <option value="8750">8.75 kg</option>
-        <option value="9000">9 kg</option>
-        <option value="9250">9.25 kg</option>
-        <option value="9500">9.5 kg</option>
-        <option value="9750">9.75 kg</option>
-        <option value="10000">10 kg</option>
-    </select>
-   
-<!-- Samosa (Potato) in dozens -->
-<label for="samosaPotato" class="mt-3">Frozen Samosa (Potato) (in dozens):</label>
-<select id="samosaPotato" class="form-control">
-    <option value="0">0 dozen</option>
-    <option value="1">1 dozen</option>
-    <option value="2">2 dozen</option>
-    <option value="3">3 dozen</option>
-    <option value="4">4 dozen</option>
-    <option value="5">5 dozen</option>
-    <option value="6">6 dozen</option>
-    <option value="7">7 dozen</option>
-    <option value="8">8 dozen</option>
-    <option value="9">9 dozen</option>
-    <option value="10">10 dozen</option>
-</select>
+document.addEventListener("click", function(e) {
+  if (e.target.classList.contains("read-more")) {
+    const desc = e.target.previousElementSibling;
+    if (desc.classList.contains("expanded")) {
+      desc.classList.remove("expanded");
+      e.target.textContent = "Read more";
+    } else {
+      desc.classList.add("expanded");
+      e.target.textContent = "Read less";
+    }
+  }
+});
 
 
-<label for="samosapatti" class="mt-3">Samosa Patti </label>
-<select id="samosapatti" class="form-control" >
-  <option value="0">0g</option>
-  <option value="250">250g</option>
-  <option value="500">500g</option>
-  <option value="750">750g</option>
-  <option value="1000">1 kg</option>
-  <option value="1250">1.25 kg</option>
-  <option value="1500">1.5 kg</option>
-  <option value="1750">1.75 kg</option>
-  <option value="2000">2 kg</option>
-  <option value="2250">2.25 kg</option>
-  <option value="2500">2.5 kg</option>
-  <option value="2750">2.75 kg</option>
-  <option value="3000">3 kg</option>
-  <option value="3250">3.25 kg</option>
-  <option value="3500">3.5 kg</option>
-  <option value="3750">3.75 kg</option>
-  <option value="4000">4 kg</option>
-  <option value="4250">4.25 kg</option>
-  <option value="4500">4.5 kg</option>
-  <option value="4750">4.75 kg</option>
-  <option value="5000">5 kg</option>
-  <option value="5250">5.25 kg</option>
-  <option value="5500">5.5 kg</option>
-  <option value="5750">5.75 kg</option>
-  <option value="6000">6 kg</option>
-  <option value="6250">6.25 kg</option>
-  <option value="6500">6.5 kg</option>
-  <option value="6750">6.75 kg</option>
-  <option value="7000">7 kg</option>
-  <option value="7250">7.25 kg</option>
-  <option value="7500">7.5 kg</option>
-  <option value="7750">7.75 kg</option>
-  <option value="8000">8 kg</option>
-  <option value="8250">8.25 kg</option>
-  <option value="8500">8.5 kg</option>
-  <option value="8750">8.75 kg</option>
-  <option value="9000">9 kg</option>
-  <option value="9250">9.25 kg</option>
-  <option value="9500">9.5 kg</option>
-  <option value="9750">9.75 kg</option>
-  <option value="10000">10 kg</option>
+function addToCart(name, price) {
+  let cart = JSON.parse(localStorage.getItem('cart') || '[]');
+  const itemIndex = cart.findIndex(item => item.name === name);
 
-</select>
+  if (itemIndex > -1) {
+    cart[itemIndex].qty += 1;
+  } else {
+    cart.push({ name, price, qty: 1 });
+  }
+  
+  localStorage.setItem('cart', JSON.stringify(cart));
+  updateCount();
+  goCart();
+}
 
-    <button id="sendOrder" class="btn btn-warning mt-3">Send Order</button>
-</div>
+function goCart() {
+  window.location.href = 'cart.html';
+}
 
+updateCount();
+</script>
 
+<!-- BOTTOM NAV (MOBILE) -->
+<nav class="bottom-nav">
+  <a class="bn-item" href="index.html">
+    <i class="fas fa-home"></i>
+    <span>Home</span>
+  </a>
+  <a class="bn-item active" href="prices.html">
+    <i class="fas fa-utensils"></i>
+    <span>Menu</span>
+  </a>
+  <a class="bn-item" href="blog.html">
+    <i class="fas fa-book-open"></i>
+    <span>Blog</span>
+  </a>
+  <a class="bn-item" href="contact.html">
+    <i class="fas fa-info-circle"></i>
+    <span>Info</span>
+  </a>
+</nav>
 
-       <!-- JavaScript for WhatsApp form submission -->
-       <script>
-       document.getElementById('sendOrder').addEventListener('click', function() {
-           // Collect values from the form
-           const name = encodeURIComponent(document.getElementById('customerName').value.trim());
-           const area = encodeURIComponent(document.getElementById('area').value);
-           const address = encodeURIComponent(document.getElementById('address').value.trim());
-
-           const samosas = encodeURIComponent(document.getElementById('samosas').value);
-           const jalebi = encodeURIComponent(document.getElementById('jalebi').value);
-           const pakoray = encodeURIComponent(document.getElementById('pakoray').value);
-           
-           const samosaPotato = encodeURIComponent(document.getElementById('samosaPotato').value);
-           
-           const samosaPatti = encodeURIComponent(document.getElementById('samosapatti').value);
-
-           // Construct message with proper line breaks (%0A)
-           const message = `Hello,%20I%20would%20like%20to%20order:%0A%0A` +
-                           `Name:%20${name}%0A` +
-                           `Area:%20${area}%0A` +
-                           `Address:%20${address}%0A%0A` +
-                           `Samosas:%20${samosas}%20dozen%0A` +
-                           `Jalebi:%20${jalebi}%20g%0A` +
-                           `Pakoray:%20${pakoray}%20g%0A` +
-                           
-                           `Samosa%20(Potato):%20${samosaPotato}%20dozen%0A` +
-                    
-                           `Samosa%20Patti:%20${samosaPatti}%20g`;
-
-           // WhatsApp URL with the encoded message
-           const whatsappUrl = `https://wa.me/923025138393?text=${message}`;
-
-           // Redirect to WhatsApp with the pre-filled message
-           window.location.href = whatsappUrl;
-       });
-   </script>
-   <footer class="container text-center my-5">
-           <hr class="my-4 bg-success">
-           <p>&copy; 2024 PARSA Refreshments. All Rights Reserved.</p>
-       </footer>
-
-
+  
 </body>
 </html>

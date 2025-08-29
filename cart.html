@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Cart</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome (icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="" crossorigin="anonymous" />
+  <link rel="stylesheet" href="css/bstyles.css">
+  <link rel="stylesheet" href="css/cart-styles.css">
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <a href="prices.html" aria-label="Back to Menu"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAYAAAAe2bNZAAAACXBIWXMAAAsTAAALEwEAmpwYAAADqklEQVR4nO2XT0wcVRzHX8i+GRBWakFmdnZ3djMzGFiDuNhgbLuskBhrJI0Ca3cXkAMGZFkOVeN768FpUw6kSRNPVSypaBsv1Xjw1LSorfFQA4mHhpImRiUxHPijMSGmFPyZN4iwMLvzp97km7xMZnfmN5/5zu/3y+8htK997dXtSKTiR0WpRP+lxBx6VMx54j6KuwXCD7Ojcf4Gqja7/o6iHJoNh+Nzqroyp6qrdzUt+kAAgZOoTCD8iEC4myLl1kXKgclaFyh3Q6B8NqSj0jwgVX1+TlWBrVlF6XMNIlLcJxA8XwDAdAkU/yJS3LsVAxAqmVXV3JyijN7VNN4xRERHnEi4i04g9kAR7vJOlwDpJb+1dDr7TNoI4kWCv7L70NrXvdB+JAT+N0tN/sdT7MVY3N/jCW0l1vnn4uHj3oIPZ8RLRztP/vpU+0PsXCDch3ZBtEwFDD0Rgi8kCU40M6AyM4cm/31WJGGAFdTCcz3lyy2dU0ttCb9I8KtOHGEg5+UgfBoIAH08BJG+A+bXE9zj6POEdFS6mXw2HBnyQqYxBOOyDJcCAXi3PghNqYOm1x4a06B5rHaBVaVtGIHwI25A9LrCIIaDejVoehWwvmQfhnLfWoE89s+n+cAmyK7c+cZ+Z6UFG9rmGw4+vAckmn7ESbmvSxRVWbuS41udgjSl7TmSt3KeuCVMDcHpYiDZRhk+CQbgciAAp+pdglAOaihO2cgXPmskp16Vd7OPcNDRHIYvJQk+8/uNEo4fk1yBGHlD+ay1MxSnXpk4Bht/bcCL52N5AcLZcuhvkuFzv7TtTLc7Z4S3cdLaGcI/Gzkjwdlrp41S3B1EGS6HgahswFz1+dwDEU+LJcyVK89Ek+8FN6QcXzDQTqCPgy4cItx9y2qCH3rK16aTK/dnUjA62VA0oJrZBBqXgy6A8NeWrsB0onJtJrXKYM5diloG3QaSHQJ5MsiO7n2fjP5xq+s1+R1+vrv7gC2gQUdA+Cc2miAnEinutZsDSsYLg0/K8L7MelAQcvUy1PVXmvcXgtPIjQTKjdsGGq4wHDoXDsNLT4fA/5bZgMV9BLct5piiIyfFU3aB1IwXXjhaAITg64vfvdy2NpNcAtBL3AMRbsJxH8lfF1gcmB7A96bTDehBJRLcY3fg2loCwT+7zhEzrbR2hLbmVWMCJPwwm0eK7ZtYH2Hl67hqLGFiXXeWY4kTu39nO0fW0tmbM0B29OU8MVtzilstFttO7Ov/qL8B8x3IPRtYt+QAAAAASUVORK5CYII=" alt="back"></a>
+    <div class="brand">Your Cart</div>
+    <button onclick="clearCart()" aria-label="Clear Cart"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0,0,256,256">
+<g fill="#bb0d0d" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(10.66667,10.66667)"><path d="M10,2l-1,1h-5v2h16v-2h-5l-1,-1zM5,7v13c0,1.1 0.9,2 2,2h10c1.1,0 2,-0.9 2,-2v-13zM8,9h2v11h-2zM14,9h2v11h-2z"></path></g></g>
+</svg></button>
+  </nav>
+
+  <div id="cart-view">
+    <!-- Cart content is rendered here -->
+  </div>
+
+  <div class="add-more-section">
+  <h3>Add More</h3>
+
+  <!-- Navigation Arrows -->
+  <button class="carousel-btn prev" id="prevBtn">&#10094;</button>
+  <button class="carousel-btn next" id="nextBtn">&#10095;</button>
+
+  <div class="add-more-carousel" id="add-more-carousel">
+    
+    <!-- More items... -->
+  </div>
+</div>
+ <script>
+    const carousel = document.getElementById("add-more-carousel");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+
+    let autoSlideInterval;
+
+    // Scroll by one card width
+    const scrollAmount = 180;
+
+    prevBtn.addEventListener("click", () => {
+      carousel.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+      resetAutoSlide();
+    });
+
+    nextBtn.addEventListener("click", () => {
+      carousel.scrollBy({ left: scrollAmount, behavior: "smooth" });
+      resetAutoSlide();
+    });
+
+    // Auto-slide every 3s
+    function startAutoSlide() {
+      autoSlideInterval = setInterval(() => {
+        carousel.scrollBy({ left: scrollAmount, behavior: "smooth" });
+        if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth - 5) {
+          carousel.scrollTo({ left: 0, behavior: "smooth" });
+        }
+      }, 3000);
+    }
+
+    function resetAutoSlide() {
+      clearInterval(autoSlideInterval);
+      startAutoSlide();
+    }
+
+    startAutoSlide();
+  </script>
+
+  <div class="checkout-bar" id="checkout-bar" style="display: none;">
+  <div class="checkout-subtotal" id="checkout-subtotal">
+    <span>Subtotal</span>
+    <strong>Rs. 0</strong>
+  </div>
+  <button class="checkout-btn" onclick="placeOrder()">
+    Place Order
+  </button>
+</div>
+
+
+  <!-- Order Modal -->
+  <div id="order-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <h2>What is your name?</h2>
+      <form id="order-form">
+        <input type="text" id="customer-name" placeholder="Your Name" required>
+        <button type="submit">Submit Order</button>
+      </form>
+    </div>
+  </div>
+
+<script>
+  const allItems = [
+  { name: 'Big Samosa', price:600, baseUnit: 12, unitType: 'pcs', variant:'card--sunset', img:'samosa big.webp' },
+  { name: 'Small Samosa', price:350, baseUnit: 12, unitType: 'pcs', variant:'card--yellow', img:'samosa.webp' },
+  { name: 'Makhan Jalebi', price:800, baseUnit: 1, unitType: 'kg', variant:'card--orange', img:'jalebi.webp' },
+  { name: 'Pakoray', price:800, baseUnit: 1, unitType: 'kg', variant:'card--golden', img:'pakoray.webp' },
+  { name: 'Chicken Roll', price:480, baseUnit: 6, unitType: 'pcs', variant:'card--spice', img:'chicken roll.webp' },
+  { name: 'Namak Paray', price:800, baseUnit: 1, unitType: 'kg', variant:'card--lavender', img:'namak pary.webp' },
+  { name: 'Shakar Paray', price:800, baseUnit: 1, unitType: 'kg', variant:'card--leaf', img:'shakar pary.webp' },
+  { name: 'Frozen Chicken Roll', price:420, baseUnit: 6, unitType: 'pcs', variant:'card--mint', img:'frozen chicken roll.webp' },
+  { name: 'Frozen Samosa', price:240, baseUnit: 12, unitType: 'pcs', variant:'card--mint-2', img:'frozen samosa.webp' },
+  { name: 'Samosa Patti', price:400, baseUnit: 1, unitType: 'kg', variant:'card--rose', img:'samosa patti.webp' }
+];
+
+
+  const cartView = document.getElementById('cart-view');
+  const checkoutBar = document.getElementById('checkout-bar');
+  const checkoutSubtotal = document.getElementById('checkout-subtotal');
+  const addMoreCarousel = document.getElementById('add-more-carousel');
+  const orderModal = document.getElementById('order-modal');
+  const orderForm = document.getElementById('order-form');
+  const DELIVERY_FEE = 50;
+  const OWNER_WHATSAPP = '923293537676'; // IMPORTANT: Replace with your WhatsApp number including country code
+
+  function getCart() {
+    return JSON.parse(localStorage.getItem('cart') || '[]');
+  }
+
+  function saveCart(cart) {
+    localStorage.setItem('cart', JSON.stringify(cart));
+    renderCart();
+    renderAddMoreCarousel();
+  }
+
+  function updateQuantity(name, delta) {
+  let cart = getCart();
+  const itemIndex = cart.findIndex(item => item.name === name);
+  if (itemIndex > -1) {
+    cart[itemIndex].qty += delta;
+    if (cart[itemIndex].qty <= 0) {
+      cart.splice(itemIndex, 1);
+    }
+  }
+  saveCart(cart);
+
+  // update unit logic live
+  const itemInfo = allItems.find(i => i.name === name);
+  if (itemInfo) {
+    const cartItem = cart.find(i => i.name === name);
+    if (cartItem) {
+      const totalPrice = itemInfo.price * cartItem.qty;
+      const totalUnits = itemInfo.baseUnit * cartItem.qty;
+      const priceEl = document.getElementById(`cart-price-${name}`);
+      if (priceEl) {
+        priceEl.innerText = `PKR ${totalPrice} /${totalUnits} ${itemInfo.unitType}`;
+      }
+    }
+  }
+}
+
+
+  function removeItem(name) {
+    let cart = getCart().filter(item => item.name !== name);
+    saveCart(cart);
+  }
+
+  function clearCart() {
+    if (confirm('Are you sure you want to clear your cart?')) {
+      saveCart([]);
+    }
+  }
+
+  function addToCart(name, price) {
+    let cart = getCart();
+    const itemIndex = cart.findIndex(item => item.name === name);
+    if (itemIndex > -1) {
+      cart[itemIndex].qty += 1;
+    } else {
+      cart.push({ name, price, qty: 1 });
+    }
+    saveCart(cart);
+  }
+
+  function placeOrder() {
+    orderModal.style.display = 'block';
+  }
+
+  function closeModal() {
+    orderModal.style.display = 'none';
+  }
+
+  function submitOrder(event) {
+    event.preventDefault();
+    const customerNameInput = document.getElementById('customer-name');
+    const customerName = customerNameInput.value.trim();
+    if (!customerName) {
+      alert('Please enter your name.');
+      return;
+    }
+
+    const cart = getCart();
+    let subtotal = 0;
+    
+    const orderDetails = cart.map(item => {
+  const itemTotal = item.price * item.qty;
+  subtotal += itemTotal;
+
+  return `${item.name}  
+   Qty: ${item.qty}  
+   Price: Rs ${itemTotal.toLocaleString()}`;
+}).join('%0A%0A'); // extra line break between items
+
+    const total = subtotal + DELIVERY_FEE;
+
+    const message = `🛍️ *New Order from:* ${customerName}%0A%0A` +
+`───────────────%0A` +
+`📦 *Order Details*%0A` +
+`───────────────%0A` +
+`${orderDetails}%0A` +
+`───────────────%0A` +
+`*Subtotal:*      Rs ${subtotal.toLocaleString()}%0A` +
+`*Delivery Fee:*  Rs ${DELIVERY_FEE.toLocaleString()}%0A` +
+`───────────────%0A` +
+`*Total:*         Rs ${total.toLocaleString()}%0A%0A` +
+`🙏 Thank you for choosing *Parsa*!`;
+
+    const whatsappUrl = `https://wa.me/${OWNER_WHATSAPP}?text=${message}`;
+    
+    orderForm.reset();
+    closeModal();
+
+
+    // Redirect to WhatsApp
+    window.location.href = whatsappUrl;
+
+    // Clear form, cart, and close modal after a short delay
+    setTimeout(() => {
+        customerNameInput.value = '';
+        saveCart([]);
+        closeModal();
+    }, 30);
+  }
+  window.onload = function() {
+    modal.style.display = "none"; 
+  };
+
+  function renderCart() {
+  const cart = getCart();
+  if (cart.length === 0) {
+    cartView.innerHTML = `
+      <div class="cart-container">
+        <div class="empty-cart">
+          <i class="fas fa-shopping-cart"></i>
+          <strong>Your cart is empty</strong>
+          <p>Looks like you haven't added anything yet. Start exploring our menu!</p>
+          <a href="prices.html" class="browse-btn">Browse Menu</a>
+        </div>
+      </div>`;
+    checkoutBar.style.display = 'none';
+    return;
+  }
+
+
+    let subtotal = 0;
+    const cartItemsHTML = cart.map(item => {
+      subtotal += item.price * item.qty;
+      const itemInfo = allItems.find(i => i.name === item.name) || {};
+      return `
+        <div class="cart-item ${itemInfo.variant || ''}">
+          <div class="cart-item-name">${item.name}</div>
+          <div class="qty-controls">
+            <button onclick="updateQuantity('${item.name}', -1)">-</button>
+            <span>${item.qty}</span>
+            <button onclick="updateQuantity('${item.name}', 1)">+</button>
+            <div class="price" id="cart-price-${item.name}">
+  PKR ${item.price * item.qty} /${(itemInfo.baseUnit || 1) * item.qty} ${itemInfo.unitType || ''}
+</div>
+
+          </div>
+          <div class="item-image-container">
+            <img src="${itemInfo.img || ''}" alt="${item.name}">
+            
+          </div>
+          <button class="remove-btn" onclick="removeItem('${item.name}')" aria-label="Remove ${item.name}">
+            <svg viewBox="0 0 24 24"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"></path></svg>
+          </button>
+        </div>
+      `;
+    }).join('');
+
+    const total = subtotal + DELIVERY_FEE;
+
+    cartView.innerHTML = `
+      <div class="cart-container">
+        ${cartItemsHTML}
+        <div class="pricing-summary">
+          <div><span>Subtotal</span> <span>Rs ${subtotal}</span></div>
+          <div><span>Delivery Fee</span> <span>Rs ${DELIVERY_FEE}</span></div>
+          <div class="total"><span>Total</span> <span>Rs ${total}</span></div>
+        </div>
+      </div>
+    `;
+
+    checkoutSubtotal.innerHTML = `<strong>Total: Rs ${total}</strong>`;
+    checkoutBar.style.display = 'flex';
+  }
+
+  function renderAddMoreCarousel() {
+    const cart = getCart();
+    const cartItemNames = cart.map(item => item.name);
+    const itemsToShow = allItems.filter(item => !cartItemNames.includes(item.name));
+    const addMoreSection = document.querySelector('.add-more-section');
+
+    if (itemsToShow.length === 0) {
+      addMoreSection.style.display = 'none';
+      return;
+    }
+
+    addMoreSection.style.display = 'block';
+    addMoreCarousel.innerHTML = itemsToShow.map(item => `
+      <div class="carousel-item ${item.variant || ''}">
+        <img src="${item.img}" alt="${item.name}">
+        <div>${item.name}</div>
+        <div class="price">PKR ${item.price} ${item.unit}</div>
+        <button class="add-btn" onclick="addToCart('${item.name}', ${item.price})">Add</button>
+      </div>
+    `).join('');
+  }
+
+  renderCart();
+  renderAddMoreCarousel();
+
+  // Event Listeners
+  orderForm.addEventListener('submit', submitOrder);
+  window.onclick = function(event) {
+    if (event.target == orderModal) {
+      closeModal();
+    }
+  }
+</script>
+
+</body>
+</html>

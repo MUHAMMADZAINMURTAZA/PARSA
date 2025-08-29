@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Shakar Paray — PARSA</title>
+  <meta name="description" content="Sweet & crunchy Shakar Paray from PARSA — fried in Dalda Banaspati and coated with sugar for a perfect snack.">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/product-page-styles.css">
+</head>
+<body>
+  <header class="nav"><div class="nav-inner container"><a class="brand" href="index.html"><img src="favicon.ico" alt="" class="brand-logo"><span class="brand-text"><span class="brand-red">PARSA</span></span></a></div></header>
+  <main class="container product-page-container" style="padding-top:18px;">
+    <div class="product-grid">
+      <div class="product-details-column">
+        <img src="shakar pary.webp" alt="Shakar Paray" class="product-image">
+        
+        <h1 class="product-title">Shakar Paray <span class="urdu">| شکر پرے</span></h1>
+        
+        <div class="quantity-section">
+          <p class="product-price" id="price-display">PKR 800</p>
+          <div class="qty-controls">
+            <button onclick="updateShakarParayQuantity(-1)">-</button>
+<span id="quantity-display">1</span>
+<button onclick="updateShakarParayQuantity(1)">+</button>
+
+<script>
+let shakarParayQuantity = 1;
+const shakarParayBasePrice = 800;
+const shakarParayBaseUnit = 1;
+const shakarParayUnitType = "kg";
+
+function updateShakarParayQuantity(change) {
+  shakarParayQuantity += change;
+  if (shakarParayQuantity < 1) shakarParayQuantity = 1;
+
+  const totalPrice = shakarParayBasePrice * shakarParayQuantity;
+  const totalUnits = shakarParayBaseUnit * shakarParayQuantity;
+
+  document.getElementById("quantity-display").innerText = shakarParayQuantity;
+  document.getElementById("price-display").innerText =
+    `PKR ${totalPrice} /${totalUnits} ${shakarParayUnitType}`;
+}
+// init
+document.getElementById("price-display").innerText =
+  `PKR ${shakarParayBasePrice} /${shakarParayBaseUnit} ${shakarParayUnitType}`;
+</script>
+
+          </div>
+        </div>
+    
+        <p class="product-desc">For a sweet treat, try our shakar pary. They are made with quality ingredients, so you get a sweet, crispy snack that's clean and safe to eat.</p>
+        
+        <button class="btn btn-primary add-to-cart-btn" onclick="addToCart()">Add to Cart</button>
+    
+        <section class="details-section">
+          <h3>Details</h3>
+          <ul>
+            <li>Sweet & crispy snack</li>
+            <li>Made with Dalda Banaspati</li>
+            <li>Coated with sugar</li>
+            <li>Hygienic & freshly prepared</li>
+          </ul>
+        </section>
+      </div>
+
+      <section class="carousel-section">
+        <h3>You might also like</h3>
+        <div class="carousel" id="other-products-carousel"></div>
+
+
+        <script>
+    const carousel = document.getElementById("other-products-carousel");
+    
+    let autoSlideInterval;
+
+    // Scroll by one card width
+    const scrollAmount = 180;
+
+
+    // Auto-slide every 3s
+    function startAutoSlide() {
+      autoSlideInterval = setInterval(() => {
+        carousel.scrollBy({ left: scrollAmount, behavior: "smooth" });
+        if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth - 5) {
+          carousel.scrollTo({ left: 0, behavior: "smooth" });
+        }
+      }, 3000);
+    }
+
+    function resetAutoSlide() {
+      clearInterval(autoSlideInterval);
+      startAutoSlide();
+    }
+
+    startAutoSlide();
+  </script>
+      </section>
+    </div>
+  </main>
+
+<script>
+  const currentProduct = { name: 'Shakar Paray', price: 800, variant:'card--leaf', img:'shakar pary.webp' };
+  const allItems = [
+     { name: 'Big Samosa', price:600, unit: '/12', variant:'card--sunset', img:'samosa big.webp', url: 'product-big-samosa.html' },
+    { name: 'Small Samosa', price:350, unit: '/12', variant:'card--yellow', img:'samosa.webp', url: 'product-small-samosa.html' },
+    { name: 'Makhan Jalebi', price:800, unit: '/kg', variant:'card--orange', img:'jalebi.webp', url: 'product-jalebi.html' },
+    { name: 'Pakoray', price:800, unit: '/kg', variant:'card--golden', img:'pakoray.webp', url: 'product-pakoray.html' },
+    { name: 'Chicken Roll', price:300, unit: '/6', variant:'card--spice', img:'chicken roll.webp', url: 'product-chicken-roll.html' },
+    { name: 'Namak Paray', price:800, unit: '/kg', variant:'card--lavender', img:'namak pary.webp', url: 'product-namak-paray.html' },
+    { name: 'Shakar Paray', price:800, unit: '/kg', variant:'card--leaf', img:'shakar pary.webp', url: 'product-shakar-paray.html' },
+    { name: 'Frozen Chicken Roll', price:420, unit: '/6', variant:'card--mint', img:'frozen chicken roll.webp', url: 'product-frozen-chicken-roll.html' },
+    { name: 'Frozen Samosa', price:240, unit: '/12', variant:'card--mint-2', img:'frozen samosa.webp', url: 'product-frozen-samosa.html' },
+    { name: 'Samosa Patti', price:400, unit: '/kg', variant:'card--rose', img:'samosa patti.webp', url: 'product-samosa-patti.html' }
+  ];
+
+  const quantityDisplay = document.getElementById('quantity-display');
+  const priceDisplay = document.getElementById('price-display');
+  let quantity = 1;
+
+  function updateQuantity(change) {
+    const newQuantity = quantity + change;
+    if (newQuantity >= 1) {
+      quantity = newQuantity;
+      quantityDisplay.innerText = quantity;
+      priceDisplay.innerText = `PKR ${currentProduct.price * quantity}`;
+    }
+  }
+
+  function addToCart() {
+    let cart = JSON.parse(localStorage.getItem('cart') || '[]');
+    const itemIndex = cart.findIndex(item => item.name === currentProduct.name);
+
+    if (itemIndex > -1) {
+      cart[itemIndex].qty += quantity;
+    } else {
+      cart.push({ name: currentProduct.name, price: currentProduct.price, qty: quantity });
+    }
+    
+    localStorage.setItem('cart', JSON.stringify(cart));
+    window.location.href = 'cart.html';
+  }
+
+  function renderOtherProducts() {
+    const carousel = document.getElementById('other-products-carousel');
+    const otherItems = allItems.filter(item => item.name !== currentProduct.name);
+    
+    carousel.innerHTML = otherItems.map(item => `
+      <a href="${item.url}" class="carousel-item ${item.variant}">
+        <img src="${item.img}" alt="${item.name}">
+        <h4>${item.name}</h4>
+        <div class="price">PKR ${item.price} ${item.unit}</div>
+      </a>
+    `).join('');
+  }
+
+  renderOtherProducts();
+</script>
+</body>
+</html>
