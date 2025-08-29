@@ -1,0 +1,192 @@
+
+ .product-page-container {
+  text-align: center;
+    }
+    .product-page-container .product-image {
+      position: static; /* Override absolute positioning */
+      width: 220px;
+      height: 220px;
+      border-radius: 20px;
+      object-fit: cover;
+      box-shadow: var(--shadow);
+      margin: 0 auto;
+      border: none;
+      
+    }
+    
+    .product-title {
+      margin: 16px 0 6px;
+    }
+    .product-page-container .product-price {
+      position: static; /* Override absolute positioning */
+      margin: 6px 0;
+      font-weight: 700;
+      color: var(--brand-red);
+      font-size: 1.2em;
+    }
+    .product-desc {
+      color: var(--muted);
+      max-width: 500px;
+      margin: 10px auto;
+    }
+    .quantity-section {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      margin: 20px 0;
+    }
+    .qty-controls {
+      display: flex;
+      align-items: center;
+    }
+    .qty-controls button {
+      width: 35px;
+      height: 35px;
+      border: 1px solid #ccc;
+      background: #f9f9f9;
+      cursor: pointer;
+      border-radius: 50%;
+      font-size: 1.2em;
+    }
+    .qty-controls span {
+      padding: 0 15px;
+      font-size: 1.2em;
+      min-width: 20px;
+      text-align: center;
+    }
+    .add-to-cart-btn {
+      display: block;
+      width: 100%;
+      max-width: 300px;
+      margin: 20px auto;
+      padding: 12px;
+      font-size: 1.1em;
+    }
+    .details-section {
+      text-align: left;
+      max-width: 500px;
+      margin: 30px auto;
+    }
+    .carousel-section {
+  max-width: 900px;
+  padding: 0 40px;
+  position: relative;
+  margin: 40px auto;
+  text-align: left;
+}
+
+/* Default: Mobile (scrollable carousel) */
+.carousel {
+  display: flex;
+  overflow-x: auto;
+  gap: 16px;
+  padding-bottom: 10px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+
+/* For larger screens → grid with 2 cards per row */
+@media (min-width: 768px) {
+  .carousel {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    overflow: visible; /* no horizontal scroll on big screens */
+  }
+}
+
+.carousel-item {
+  flex: 0 0 160px;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  text-align: center;
+  padding: 15px 12px;
+  scroll-snap-align: start;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.carousel-item:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.12);
+}
+.carousel-item img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 14px;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+}
+.carousel-item:hover img {
+  transform: scale(1.08);
+}
+
+/* Product name styling */
+.carousel-item h4 {
+  font-size: 1rem;
+  margin: 6px 0 4px;
+  color: #000;        /* Black */
+  font-weight: 600;   /* Bold */
+  text-decoration: none !important;
+  
+}
+
+/* Price styling */
+.carousel-item .price {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #444;        /* Darker instead of grey-blue */
+  margin-bottom: 8px;
+  text-decoration: none !important;
+}
+
+
+
+
+
+    /* Card color variants */
+    .card--mint{background: linear-gradient(180deg,#E9FCEB,#DFF3E6)}
+    .card--mint-2{background: linear-gradient(180deg,#F6F9E9,#EAF0C9)}
+    .card--orange {background: linear-gradient(180deg,#FFEAD9,#FFDCC3)}
+    .card--lavender {background: linear-gradient(180deg,#F2E9FC,#E5DFF3)}
+    .card--rose {background: linear-gradient(180deg,#FFE6E6,#FFD6D6)}
+    .card--golden {background: linear-gradient(180deg,#FFF8E1,#FFE082)}
+    .card--sunset {background: linear-gradient(180deg,#FFF0E0,#FFD8A8)}
+    .card--leaf {background: linear-gradient(180deg,#E8F5E9,#C8E6C9);}
+    .card--spice {background: linear-gradient(180deg,#FFE8E0,#FFCCB3);}   /* chicken roll */
+    .card--yellow {background: linear-gradient(180deg,#FFFBE6,#FFF5CC);}   /* small samosa */
+
+    /* Responsive Grid for large screens */
+    @media (min-width: 992px) {
+      .product-grid {
+        display: grid;
+        grid-template-columns: 1fr 340px; /* Main content and sidebar */
+        gap: 40px;
+        align-items: start;
+        text-align: left;
+      }
+      .product-details-column {
+        text-align: center; /* Keep content inside centered */
+      }
+      .details-section, .carousel-section {
+        margin-top: 0;
+        text-align: left;
+      }
+      .carousel-section {
+        position: sticky;
+        top: 80px; /* Stick below the nav bar */
+      }
+      .carousel {
+        flex-direction: column;
+        overflow-y: auto;
+        max-height: 70vh; /* Limit height and allow scrolling */
+      }
+      .carousel-item {
+        flex-shrink: 0;
+      }
+    }
