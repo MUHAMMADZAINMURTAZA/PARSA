@@ -4,79 +4,249 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Us - Parsa Refreshment</title>
-  <link rel="stylesheet" href="contacts.css">
+  <link rel="stylesheet" href="css/contact-styles.css">
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 </head>
 <body>
 
+  <!-- Header -->
   <section class="contact-header">
-    <div class="header-content">
-      <img src="https://cdn-icons-png.flaticon.com/512/2942/2942938.png" alt="Contact Illustration" class="header-illustration">
-      <h1>Contact Us</h1>
-      <p>We’d love to hear from you! Reach us via call, WhatsApp, or visit us at our shop.</p>
-      <a href="tel:+923001234567" class="cta-btn">📞 Call Us Today</a>
+    <div class="header-grid">
+      <div class="header-text">
+        <h1>About Us</h1>
+         <p>
+      It’s not easy to find your favorite local snacks made the way they 
+      <em>should</em> be. Too often, street vendors cut corners — using cheap, greasy oils, 
+      ignoring hygiene, and serving food that feels heavy, oily, and unsatisfying. 
+      You leave with a bad taste in your mouth, both literally and figuratively.
+    </p>
+    
+    <p>
+      At <strong>Parsa Refreshment</strong>, we set out to change that. We believe your snacks 
+      should be a treat, not a compromise. That’s why we prepare every 
+      <em>samosa, pakora, jalebi,</em> and weekend special with 
+      <strong>premium Dalda Banaspati</strong> — ensuring they’re perfectly crispy, light, 
+      and full of flavor without the greasy after-feel.
+    </p>
+    
+    <p>
+      We don’t just stop at taste. Cleanliness and quality are at the heart of everything 
+      we do. From carefully selected ingredients to strict hygiene practices, 
+      we make sure every bite is one you can enjoy with complete peace of mind.
+    </p>
+    
+    <p>
+      Because for us, it’s not just about food — it’s about giving you the joy of enjoying 
+      your favorite snacks <strong>the way they were meant to be</strong>: fresh, hygienic, 
+      and unforgettable.
+    </p>
+    
+    <p>
+      With <strong>Parsa Refreshment</strong>, you’re not just eating — you’re reliving the 
+      authentic taste of tradition, done right.
+    </p>
+      </div>
+      <div class="header-illustration">
+        <h1>Contact Us</h1>
+        <!-- Replace with IconShout SVG illustration -->
+        <img src="contact-us.png" alt="Contact Illustration">
+      </div>
     </div>
   </section>
 
-  <section class="contact-details">
+  <!-- Contact Actions -->
+  <section class="contact-actions">
     <div class="contact-card">
-      <i class='bx bx-phone-call'></i>
-      <h3>Call & WhatsApp</h3>
-      <p><a href="tel:+923001234567">+92 300 1234567</a></p>
-      <p><a href="https://wa.me/923001234567" target="_blank">Chat on WhatsApp</a></p>
-    </div>
-
-    <div class="contact-card">
-      <i class='bx bx-envelope'></i>
-      <h3>Email</h3>
-      <p><a href="mailto:info@parsarefreshment.com">info@parsarefreshment.com</a></p>
-    </div>
-
-    <div class="contact-card">
-      <i class='bx bx-time-five'></i>
-      <h3>Business Hours</h3>
-      <p>Everyday: 10 AM – 10 PM</p>
-    </div>
-
-    <div class="contact-card">
-      <i class='bx bx-map'></i>
-      <h3>Visit Us</h3>
-      <p>H5CG+JH Islamabad, Pakistan</p>
+      <h3>Get in Touch</h3>
+      <div class="contact-buttons">
+        <a href="tel:+923001234567" class="contact-btn call"><i class='bx bx-phone-call'></i></a>
+        <a href="https://wa.me/923001234567" target="_blank" class="contact-btn whatsapp"><i class='bx bxl-whatsapp'></i></a>
+        <a href="mailto:info@parsarefreshment.com" class="contact-btn email"><i class='bx bx-envelope'></i></a>
+      </div>
     </div>
   </section>
 
+
+  <!-- Map -->
   <section class="map-section">
+    <h2>Find Us Here</h2>
     <iframe 
       src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13282.170273918055!2d73.1309248!3d33.5712173!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38dfecbdc5a5e9a1%3A0x2d116ccf10c80a6e!2sH5CG%2BJH%20Islamabad%2C%20Pakistan!5e0!3m2!1sen!2s!4v1693920955055!5m2!1sen!2s" 
       width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy">
     </iframe>
   </section>
 
+  <!-- Social -->
   <section class="social-section">
     <h2>Follow Us</h2>
     <div class="social-links">
-      <a href="#" target="_blank"><i class='bx bxl-facebook'></i></a>
-      <a href="#" target="_blank"><i class='bx bxl-instagram'></i></a>
-      <a href="#" target="_blank"><i class='bx bxl-youtube'></i></a>
-      <a href="#" target="_blank"><i class='bx bxl-tiktok'></i></a>
+      <a href="#" target="_blank" class="facebook"><i class='bx bxl-facebook'></i></a>
+      <a href="#" target="_blank" class="instagram"><i class='bx bxl-instagram'></i></a>
+      <a href="#" target="_blank" class="youtube"><i class='bx bxl-youtube'></i></a>
+      <a href="#" target="_blank" class="tiktok"><i class='bx bxl-tiktok'></i></a>
     </div>
   </section>
 
+  <!-- FAQ -->
   <section class="faq-section">
-    <h2>Frequently Asked Questions</h2>
-    <div class="faq">
-      <h4>Do you offer home delivery?</h4>
-      <p>Yes, we deliver across Jinnah Garden, PWD, Soan Garden, and nearby areas.</p>
+  <h2>Frequently Asked Questions</h2>
+
+  <div class="faq">
+    <button class="faq-toggle">
+      What makes Parsa Refreshment different from other local snack vendors? 
+      <i class='bx bx-chevron-down'></i>
+    </button>
+    <div class="faq-content">
+      <p>
+        Unlike others who often use cheap oils and compromise on hygiene, 
+        <b>Parsa Refreshment</b> focuses on quality. We fry in premium Dalda Banaspati, 
+        maintain strict cleanliness, and use only fresh ingredients so every bite 
+        tastes better and feels lighter.
+      </p>
     </div>
-    <div class="faq">
-      <h4>Which oil do you fry snacks in?</h4>
-      <p>We fry all snacks in **Dalda Banaspati** for premium quality & taste.</p>
+  </div>
+
+  <div class="faq">
+    <button class="faq-toggle">
+      Do you really use Dalda Banaspati for frying? 
+      <i class='bx bx-chevron-down'></i>
+    </button>
+    <div class="faq-content">
+      <p>
+        Yes! We never compromise on quality. All our samosas, pakoras, and jalebis 
+        are fried in <b>Dalda Banaspati</b>, which gives them that crispy texture 
+        without leaving them greasy.
+      </p>
     </div>
-    <div class="faq">
-      <h4>Can I order online?</h4>
-      <p>Yes! Order easily from our website or through WhatsApp.</p>
+  </div>
+
+  <div class="faq">
+    <button class="faq-toggle">
+      Are your snacks hygienically prepared? 
+      <i class='bx bx-chevron-down'></i>
+    </button>
+    <div class="faq-content">
+      <p>
+        Absolutely. Hygiene is our top priority. From a clean kitchen environment 
+        to fresh ingredients and safe frying methods, you can trust that your 
+        snacks are prepared with care.
+      </p>
     </div>
-  </section>
+  </div>
+
+  <div class="faq">
+    <button class="faq-toggle">
+      Can I place an order online or only in-store? 
+      <i class='bx bx-chevron-down'></i>
+    </button>
+    <div class="faq-content">
+      <p>
+        You can easily order online through our website or WhatsApp, and of course, 
+        you’re always welcome to visit us in person.
+      </p>
+    </div>
+  </div>
+
+  <div class="faq">
+    <button class="faq-toggle">
+      Do you deliver in Jinnah Garden and nearby areas? 
+      <i class='bx bx-chevron-down'></i>
+    </button>
+    <div class="faq-content">
+      <p>
+        Yes, we deliver across <b>Jinnah Garden, PWD, Soan Garden, Naval Anchorage, 
+        and Gulberg Greens</b>. Fresh snacks right at your doorstep!
+      </p>
+    </div>
+  </div>
+
+  <div class="faq">
+    <button class="faq-toggle">
+      What are your weekend specials? 
+      <i class='bx bx-chevron-down'></i>
+    </button>
+    <div class="faq-content">
+      <p>
+        On weekends, we serve our famous <b>Halwa Puri</b> along with our regular 
+        crispy samosas, pakoras, and sweet jalebis. A perfect treat for family brunch!
+      </p>
+    </div>
+  </div>
+
+  <div class="faq">
+    <button class="faq-toggle">
+      Can I preorder snacks for family gatherings or parties? 
+      <i class='bx bx-chevron-down'></i>
+    </button>
+    <div class="faq-content">
+      <p>
+        Yes! We take preorders for birthdays, family get-togethers, and events so 
+        your guests can enjoy fresh and delicious snacks without any hassle.
+      </p>
+    </div>
+  </div>
+
+  <div class="faq">
+    <button class="faq-toggle">
+      Do you offer bulk discounts for events or catering? 
+      <i class='bx bx-chevron-down'></i>
+    </button>
+    <div class="faq-content">
+      <p>
+        Definitely. For bulk orders and catering, we offer special pricing so you 
+        get both quality and value for your celebrations.
+      </p>
+    </div>
+  </div>
+
+  <div class="faq">
+    <button class="faq-toggle">
+      Is your jalebi really made with pure ingredients? 
+      <i class='bx bx-chevron-down'></i>
+    </button>
+    <div class="faq-content">
+      <p>
+        Yes, our jalebis are made with <b>pure flour, quality sugar, and fried in 
+        Dalda Banaspati</b>. That’s why they taste so light, crispy, and 
+        authentically sweet.
+      </p>
+    </div>
+  </div>
+
+  <div class="faq">
+    <button class="faq-toggle">
+      Why should I trust Parsa when other shops are cheaper? 
+      <i class='bx bx-chevron-down'></i>
+    </button>
+    <div class="faq-content">
+      <p>
+        Cheaper snacks often mean cheap ingredients and poor hygiene. At Parsa, 
+        you get <b>quality, cleanliness, and trust</b> in every bite — snacks 
+        that taste great and are safe for your health.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+  <script>
+    // FAQ Accordion
+    document.querySelectorAll(".faq-toggle").forEach(btn => {
+      btn.addEventListener("click", () => {
+        btn.classList.toggle("active");
+        const content = btn.nextElementSibling;
+        const icon = btn.querySelector("i");
+
+        if (btn.classList.contains("active")) {
+          content.style.maxHeight = content.scrollHeight + "px";
+          icon.style.transform = "rotate(180deg)";
+        } else {
+          content.style.maxHeight = null;
+          icon.style.transform = "rotate(0deg)";
+        }
+      });
+    });
+  </script>
 
 </body>
 </html>

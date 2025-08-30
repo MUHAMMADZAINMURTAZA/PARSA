@@ -29,10 +29,7 @@
   <div class="add-more-section">
   <h3>Add More</h3>
 
-  <!-- Navigation Arrows -->
-  <button class="carousel-btn prev" id="prevBtn">&#10094;</button>
-  <button class="carousel-btn next" id="nextBtn">&#10095;</button>
-
+  
   <div class="add-more-carousel" id="add-more-carousel">
     
     <!-- More items... -->
@@ -48,15 +45,7 @@
     // Scroll by one card width
     const scrollAmount = 180;
 
-    prevBtn.addEventListener("click", () => {
-      carousel.scrollBy({ left: -scrollAmount, behavior: "smooth" });
-      resetAutoSlide();
-    });
-
-    nextBtn.addEventListener("click", () => {
-      carousel.scrollBy({ left: scrollAmount, behavior: "smooth" });
-      resetAutoSlide();
-    });
+   
 
     // Auto-slide every 3s
     function startAutoSlide() {

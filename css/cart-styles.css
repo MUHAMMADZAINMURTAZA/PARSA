@@ -212,7 +212,7 @@ body {
 .add-more-section {
   max-width: 900px;
   margin: 30px auto;
-  padding: 0 40px;
+  padding: 0 5px;
   position: relative;
 }
 
@@ -303,33 +303,7 @@ body {
   box-shadow: 0 3px 8px rgba(244, 67, 54, 0.25);
 }
 
-/* Navigation Buttons */
-.carousel-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0,0,0,0.6);
-  color: #fff;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 20px;
-  z-index: 10;
-  transition: background 0.3s ease;
-}
 
-.carousel-btn:hover {
-  background: rgba(0,0,0,0.8);
-}
-
-.prev {
-  left: 0;
-}
-
-.next {
-  right: 0;
-}
 
 .checkout-bar {
   position: fixed;
