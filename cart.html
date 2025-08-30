@@ -109,7 +109,7 @@
   const addMoreCarousel = document.getElementById('add-more-carousel');
   const orderModal = document.getElementById('order-modal');
   const orderForm = document.getElementById('order-form');
-  const DELIVERY_FEE = 50;
+  const DELIVERY_FEE = 150;
   const OWNER_WHATSAPP = '923293537676'; // IMPORTANT: Replace with your WhatsApp number including country code
 
   function getCart() {
@@ -202,9 +202,9 @@
 
     const total = subtotal + DELIVERY_FEE;
 
-    const message = `🛍️ *New Order from:* ${customerName}%0A%0A` +
+    const message = `✨ *New Order from:* ${customerName}%0A%0A` +
 `───────────────%0A` +
-`📦 *Order Details*%0A` +
+`⚡ *Order Details*%0A` +
 `───────────────%0A` +
 `${orderDetails}%0A` +
 `───────────────%0A` +
@@ -212,7 +212,7 @@
 `*Delivery Fee:*  Rs ${DELIVERY_FEE.toLocaleString()}%0A` +
 `───────────────%0A` +
 `*Total:*         Rs ${total.toLocaleString()}%0A%0A` +
-`🙏 Thank you for choosing *Parsa*!`;
+`👍 Thank you for choosing *Parsa*!`;
 
     const whatsappUrl = `https://wa.me/${OWNER_WHATSAPP}?text=${message}`;
     
