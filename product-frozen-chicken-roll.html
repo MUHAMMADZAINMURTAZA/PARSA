@@ -2,11 +2,61 @@
 <html lang="en">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Frozen Chicken Roll — PARSA</title>
-  <meta name="description" content="Frozen Chicken Rolls by PARSA — freshly prepared, hygienically packed, ready to fry at home.">
+  <title>Frozen Chicken Roll in Islamabad | Parsa Refreshment</title>
+  <meta name="description" content="Stock up on Frozen Chicken Rolls from PARSA Refreshment. Ready-to-fry rolls with real chicken filling. Available across Islamabad.">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/product-page-styles.css">
+
+  <meta property="og:title" content="Frozen Chicken Roll - PARSA Refreshments">
+<meta property="og:description" content="Crispy outside, juicy inside – PARSA Frozen Chicken Rolls are ready-to-fry snacks your freezer needs.">
+<meta property="og:image" content="https://muhammadzainmurtaza.github.io/PARSA/frozen%20chicken%20roll.webp">
+<meta property="og:url" content="https://muhammadzainmurtaza.github.io/PARSA/product-frozen-chicken-roll.html">
+<meta property="og:type" content="website">
+
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Frozen Chicken Roll (6 pcs) from Parsa Refreshment",
+  "brand": {
+    "@type": "Brand",
+    "name": "PARSA"
+  },
+  "image": "https://muhammadzainmurtaza.github.io/PARSA/frozen%20chicken%20roll.webp",
+  "description": "Craving our chicken rolls? Keep a pack in your freezer! These are filled with only pure chicken and no fillers. You can fry them yourself in premium Dalda Banaspati for a fresh, hot, and healthy snack anytime you want. A convenient choice for families who want homemade taste with less effort.",
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "PKR",
+    "price": "420",
+    "itemCondition": "https://schema.org/NewCondition",
+    "availability": "https://schema.org/InStock",
+    "shippingDetails": {
+      "@type": "OfferShippingDetails",
+      "shippingDestination": {
+        "@type": "DefinedRegion",
+        "addressCountry": "PK",
+        "addressRegion": "ICT",
+        "areaServed": [
+          "Jinnah Garden",
+          "Soan Garden",
+          "PWD",
+          "Naval Anchorage",
+          "Gulberg Green"
+        ]
+      },
+      "transitTimeLabel": "Fast Delivery",
+      "deliveryTime": {
+        "@type": "QuantitativeValue",
+        "value": "30",
+        "unitCode": "MIN"
+      }
+    }
+  }
+}
+</script>
+
 </head>
 <body>
   <header class="nav"><div class="nav-inner container"><a class="brand" href="index.html"><img src="favicon.ico" alt="" class="brand-logo"><span class="brand-text"><span class="brand-red">PARSA</span></span></a></div></header>
@@ -14,7 +64,7 @@
     <div class="product-grid">
       <div class="product-details-column">
         <div class="product-hero">
-          <img src="frozen chicken roll.webp" alt="Frozen Chicken Roll" class="product-image">
+          <img src="frozen chicken roll.webp" alt="Frozen Chicken Roll from Parsa Refreshment in Jinnah Garden, also serving Soan Garden, Naval Anchorage, PWD and Gulberg Green Islamabad" class="product-image">
         </div>
 
         <h1 class="product-title">Frozen Chicken Roll <span class="urdu">| فرائزن چکن رول</span></h1>
@@ -26,32 +76,11 @@
 <span id="quantity-display">1</span>
 <button onclick="updateFrozenChickenRollQuantity(1)">+</button>
 
-<script>
-let frozenChickenRollQuantity = 1;
-const frozenChickenRollBasePrice = 420;
-const frozenChickenRollBaseUnit = 6;
-const frozenChickenRollUnitType = "pcs";
-
-function updateFrozenChickenRollQuantity(change) {
-  frozenChickenRollQuantity += change;
-  if (frozenChickenRollQuantity < 1) frozenChickenRollQuantity = 1;
-
-  const totalPrice = frozenChickenRollBasePrice * frozenChickenRollQuantity;
-  const totalUnits = frozenChickenRollBaseUnit * frozenChickenRollQuantity;
-
-  document.getElementById("quantity-display").innerText = frozenChickenRollQuantity;
-  document.getElementById("price-display").innerText =
-    `PKR ${totalPrice} /${totalUnits} ${frozenChickenRollUnitType}`;
-}
-// init
-document.getElementById("price-display").innerText =
-  `PKR ${frozenChickenRollBasePrice} /${frozenChickenRollBaseUnit} ${frozenChickenRollUnitType}`;
-</script>
 
           </div>
         </div>
     
-        <p class="product-desc">Craving our chicken rolls? Keep a pack in your freezer! These are filled with only pure chicken and no fillers. You can fry them yourself in premium Dalda Banaspati for a fresh, hot, and healthy snack anytime you want.</p>
+        <p class="product-desc">Craving our chicken rolls? Keep a pack in your freezer! These are filled with only pure chicken and no fillers. You can fry them yourself in premium Dalda Banaspati for a fresh, hot, and healthy snack anytime you want. A convenient choice for families who want homemade taste with less effort.</p>
         
         <button class="btn btn-primary add-to-cart-btn" onclick="addToCart()">Add to Cart</button>
     
@@ -71,31 +100,43 @@ document.getElementById("price-display").innerText =
         <div class="carousel" id="other-products-carousel"></div>
 
         <script>
-    const carousel = document.getElementById("other-products-carousel");
-    
-    let autoSlideInterval;
+  const carousel1 = document.getElementById("other-products-carousel");
 
-    // Scroll by one card width
-    const scrollAmount = 180;
+  let autoSlideInterval1;
+  const scrollAmount1 = 180; // card width
 
+  function startAutoSlide1() {
+    autoSlideInterval1 = setInterval(() => {
+      carousel1.scrollBy({ left: scrollAmount1, behavior: "smooth" });
 
-    // Auto-slide every 3s
-    function startAutoSlide() {
-      autoSlideInterval = setInterval(() => {
-        carousel.scrollBy({ left: scrollAmount, behavior: "smooth" });
-        if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth - 5) {
-          carousel.scrollTo({ left: 0, behavior: "smooth" });
-        }
-      }, 3000);
-    }
+      // Reset to start when reaching end
+      if (carousel1.scrollLeft + carousel1.clientWidth >= carousel1.scrollWidth - 5) {
+        carousel1.scrollTo({ left: 0, behavior: "smooth" });
+      }
+    }, 3000); // keep your 3s interval
+  }
 
-    function resetAutoSlide() {
-      clearInterval(autoSlideInterval);
-      startAutoSlide();
-    }
+  function stopAutoSlide1() {
+    clearInterval(autoSlideInterval1);
+  }
 
-    startAutoSlide();
-  </script>
+  function resumeAutoSlide1() {
+    stopAutoSlide1();
+    startAutoSlide1();
+  }
+
+  // Pause on hover (desktop)
+  carousel1.addEventListener("mouseenter", stopAutoSlide1);
+  carousel1.addEventListener("mouseleave", resumeAutoSlide1);
+
+  // Pause on touch (mobile/tablet)
+  carousel1.addEventListener("touchstart", stopAutoSlide1);
+  carousel1.addEventListener("touchend", resumeAutoSlide1);
+
+  // Start initially
+  startAutoSlide1();
+</script>
+
       </section>
     </div>
   </main>
@@ -103,16 +144,17 @@ document.getElementById("price-display").innerText =
 <script>
   const currentProduct = { name: 'Frozen Chicken Roll', price: 420, variant:'card--mint', img:'frozen chicken roll.webp' };
   const allItems = [
-     { name: 'Big Samosa', price:600, unit: '/12', variant:'card--sunset', img:'samosa big.webp', url: 'product-big-samosa.html' },
-    { name: 'Small Samosa', price:350, unit: '/12', variant:'card--yellow', img:'samosa.webp', url: 'product-small-samosa.html' },
-    { name: 'Makhan Jalebi', price:800, unit: '/kg', variant:'card--orange', img:'jalebi.webp', url: 'product-jalebi.html' },
-    { name: 'Pakoray', price:800, unit: '/kg', variant:'card--golden', img:'pakoray.webp', url: 'product-pakoray.html' },
-    { name: 'Chicken Roll', price:300, unit: '/6', variant:'card--spice', img:'chicken roll.webp', url: 'product-chicken-roll.html' },
-    { name: 'Namak Paray', price:800, unit: '/kg', variant:'card--lavender', img:'namak pary.webp', url: 'product-namak-paray.html' },
-    { name: 'Shakar Paray', price:800, unit: '/kg', variant:'card--leaf', img:'shakar pary.webp', url: 'product-shakar-paray.html' },
-    { name: 'Frozen Chicken Roll', price:420, unit: '/6', variant:'card--mint', img:'frozen chicken roll.webp', url: 'product-frozen-chicken-roll.html' },
-    { name: 'Frozen Samosa', price:240, unit: '/12', variant:'card--mint-2', img:'frozen samosa.webp', url: 'product-frozen-samosa.html' },
-    { name: 'Samosa Patti', price:400, unit: '/kg', variant:'card--rose', img:'samosa patti.webp', url: 'product-samosa-patti.html' }
+      { name: 'Big Samosa', price: 600, unit: '/12', variant: 'card--sunset', img: 'samosa big.webp', desc: ' Our samosas are the best because we only use premium Dalda Banaspati to fry them, making them golden and crispy, not greasy. We fill them with high-quality ingredients and make sure everything is clean and hygienic.', url: 'product-big-samosa.html' },
+  { name: 'Small Samosa', price: 350, unit: '/12', variant: 'card--yellow', img: 'samosa.webp', desc: 'Mini samosas for light snacking.', url: 'product-small-samosa.html' },
+  { name: 'Makhan Jalebi', price: 800, unit: '/kg', variant: 'card--orange', img: 'jalebi.webp', desc: 'Our jalebis are made with the best ingredients and fried to a perfect crisp in premium Dalda Banaspati. They are sweet and delicious, giving you the traditional taste you love, made with the highest quality standards.', url: 'product-jalebi.html' },
+  { name: 'Pakoray', price: 800, unit: '/kg', variant: 'card--golden', img: 'pakoray.webp', desc: 'We make our pakoray with pure basin and other top-quality ingredients. They are fried in premium Dalda Banaspati so they are crispy and flavorful, not heavy or oily. We always follow strict hygiene rules.', url: 'product-pakoray.html' },
+  { name: 'Chicken Roll', price: 480, unit: '/6', variant: 'card--spice', img: 'chicken roll.webp', desc: 'Our chicken rolls are a customer favourite because they are filled with pure, juicy chicken—no other fillers. We fry them in premium Dalda Banaspati and prepare everything under strict hygienic conditions.', url: 'product-chicken-roll.html' },
+  { name: 'Namak Paray', price: 800, unit: '/kg', variant: 'card--lavender', img: 'namak pary.webp', desc: 'Craving a salty crunch? Our namak pary are the perfect snack. We make them using the best ingredients and fry them in premium Dalda Banaspati, so they are crispy and delicious, not greasy.', url: 'product-namak-paray.html' },
+  { name: 'Shakar Paray', price: 800, unit: '/kg', variant: 'card--leaf', img: 'shakar pary.webp', desc: 'For a sweet treat, try our shakar pary. They are made with quality ingredients, so you get a sweet, crispy snack that is clean and safe to eat.', url: 'product-shakar-paray.html' },
+  { name: 'Frozen Chicken Roll', price: 420, unit: '/6', variant: 'card--mint', img: 'frozen chicken roll.webp', desc: 'Craving our chicken rolls? Keep a pack in your freezer! These are filled with only pure chicken and no fillers. You can fry them yourself in premium Dalda Banaspati for a fresh, hot, and healthy snack anytime you want.', url: 'product-frozen-chicken-roll.html' },
+  { name: 'Frozen Samosa', price: 240, unit: '/12', variant: 'card--mint-2', img: 'frozen samosa.webp', desc: 'Enjoy our famous samosas at home! We make them with the same high-quality ingredients and strict hygiene as our fresh ones. Just fry them in premium Dalda Banaspati whenever you like for a crispy, healthy, and delicious snack', url: 'product-frozen-samosa.html' },
+  { name: 'Samosa Patti', price: 400, unit: '/kg', variant: 'card--rose', img: 'samosa patti.webp', desc: 'Thin sheets for making samosas.', url: 'product-samosa-patti.html' }
+
   ];
 
   const quantityDisplay = document.getElementById('quantity-display');
@@ -148,8 +190,9 @@ document.getElementById("price-display").innerText =
     
     carousel.innerHTML = otherItems.map(item => `
       <a href="${item.url}" class="carousel-item ${item.variant}">
-        <img src="${item.img}" alt="${item.name}">
+        <img src="${item.img}" alt="${item.name} from Parsa Refreshment in Jinnah Garden, also serving Soan Garden, Naval Anchorage, PWD and Gulberg Green Islamabad">
         <h4>${item.name}</h4>
+        <p class="product-des">${item.desc || ''}</p>
         <div class="price">PKR ${item.price} ${item.unit}</div>
       </a>
     `).join('');
@@ -157,5 +200,27 @@ document.getElementById("price-display").innerText =
 
   renderOtherProducts();
 </script>
+<script>
+let frozenChickenRollQuantity = 1;
+const frozenChickenRollBasePrice = 420;
+const frozenChickenRollBaseUnit = 6;
+const frozenChickenRollUnitType = "pcs";
+
+function updateFrozenChickenRollQuantity(change) {
+  frozenChickenRollQuantity += change;
+  if (frozenChickenRollQuantity < 1) frozenChickenRollQuantity = 1;
+
+  const totalPrice = frozenChickenRollBasePrice * frozenChickenRollQuantity;
+  const totalUnits = frozenChickenRollBaseUnit * frozenChickenRollQuantity;
+
+  document.getElementById("quantity-display").innerText = frozenChickenRollQuantity;
+  document.getElementById("price-display").innerText =
+    `PKR ${totalPrice} /${totalUnits} ${frozenChickenRollUnitType}`;
+}
+// init
+document.getElementById("price-display").innerText =
+  `PKR ${frozenChickenRollBasePrice} /${frozenChickenRollBaseUnit} ${frozenChickenRollUnitType}`;
+</script>
+
 </body>
 </html>
