@@ -6,6 +6,78 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
+/* NAV */
+.nav{background:transparent;padding:10px 0;position:sticky;top:0;z-index:40}
+.nav-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap: wrap;  /* ✅ lets items move to new line if needed */
+  gap: 8px;
+}
+.nav .container {
+  padding: 0;
+  margin: 0;
+  width: auto;
+}
+@media (max-width: 600px) {
+  .search-form {
+    order: 3;       /* ✅ push it below */
+    width: 100%;
+    max-width: 100%;
+  }
+}
+.brand{
+  display:flex;
+  align-items:center;
+  text-decoration:none;
+  color:var(--brand-green)
+}
+.brand-logo{
+  height:36px;
+  margin-right:8px
+}
+.brand-text{
+  font-weight:700;
+  font-size:1.5rem
+}
+.brand-red{
+  color:var(--brand-red)
+}
+.nav-links{
+  display:flex;
+  gap:12px
+}
+.nav-link{
+  text-decoration:none;
+  color:var(--brand-green);
+  font-weight:600;
+  padding:6px 8px;
+  border-radius:8px
+}
+.nav-link:hover{
+  background:rgba(46,125,50,0.06)
+}
+
+.nav .cart {
+  color: #fff;
+  font-size: 20px;
+  position: relative;
+  cursor: pointer;
+  padding-right: 15px;
+}
+.nav .cart .badge {
+  position: absolute;
+  top: -6px;
+  right: -0px;
+  background: var(--brand-red);
+  color: #fff;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 12px;
+}
+
+
 /* Menu Grid */
 .menu-grid {
   display: grid;
@@ -144,3 +216,4 @@ body {
 .card--mint { background: linear-gradient(180deg,#E9FCEB,#DFF3E6); }
 .card--mint-2 { background: linear-gradient(180deg,#F6F9E9,#EAF0C9); }
 .card--rose { background: linear-gradient(180deg,#FFE6E6,#FFD6D6); }
+
