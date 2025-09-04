@@ -1,0 +1,230 @@
+
+:root{
+  --bg: #ffffff;
+  --brand-red: #B71C1C;       /* deep red for PARSA word */
+  --brand-green: #2E7D32;     /* deep green for nav links and accents */
+  --muted: #6b6b6b;
+  --card-radius: 20px;
+  --shadow: 0 8px 20px rgba(30,30,30,0.08);
+  --gap: 14px;
+  --max-width: 980px;
+}
+
+/* Base Font */
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  font-family: 'Poppins', sans-serif;
+}
+
+
+/* NAV */
+.nav{background:transparent;padding:10px 0;position:sticky;top:0;z-index:40}
+.nav-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap: wrap;  /* ✅ lets items move to new line if needed */
+  gap: 8px;
+}
+.nav .container {
+  padding: 0;
+  margin: 0;
+  width: auto;
+}
+@media (max-width: 600px) {
+  .search-form {
+    order: 3;       /* ✅ push it below */
+    width: 100%;
+    max-width: 100%;
+  }
+}
+.brand{
+  display:flex;
+  align-items:center;
+  text-decoration:none;
+  color:var(--brand-green)
+}
+.brand-logo{
+  height:36px;
+  margin-right:8px
+}
+.brand-text{
+  font-weight:700;
+  font-size:1.5rem
+}
+.brand-red{
+  color:var(--brand-red)
+}
+.nav-links{
+  display:flex;
+  gap:12px
+}
+.nav-link{
+  text-decoration:none;
+  color:var(--brand-green);
+  font-weight:600;
+  padding:6px 8px;
+  border-radius:8px
+}
+.nav-link:hover{
+  background:rgba(46,125,50,0.06)
+}
+
+.nav .cart {
+  color: #fff;
+  font-size: 20px;
+  position: relative;
+  cursor: pointer;
+  padding-right: 15px;
+}
+.nav .cart .badge {
+  position: absolute;
+  top: -6px;
+  right: -0px;
+  background: var(--brand-red);
+  color: #fff;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 12px;
+}
+
+/* Menu Grid */
+.menu-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  padding: 20px;
+  padding-bottom: 120px;
+}
+
+@media (min-width: 768px) {
+  .menu-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Card */
+.card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 12px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  min-height: 110px; /* 🔹 shorter height */
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.1);
+}
+
+/* Left Section (Title + Desc) */
+.card .left {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  padding-left: 10px;
+}
+
+.card .left .title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.card .desc {
+  font-size: 13px;
+  color: #444;
+  line-height: 1.3em;
+  max-height: 2.6em;       /* show max 2 lines */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp:2;   /* clamp to 2 lines */
+  -webkit-box-orient: vertical;
+}
+
+.read-more {
+  display: inline-block;
+  font-size: 13px;
+  color: #007bff;
+  cursor: pointer;
+  margin-top: 2px;
+  text-decoration: none;
+}
+.read-more:hover {
+  text-decoration: underline;
+}
+
+/* Right Section (Image + Price) */
+.card .right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding-right: 30px;
+}
+
+.card .right img {
+  width: 70px; /* 🔹 smaller thumbnail */
+  height: 70px;
+  object-fit: contain;
+}
+
+.card .right .price {
+  
+  font-weight:800;
+  color:var(--brand-red);
+  font-size:1.05rem;
+  letter-spacing:0.6px;
+  padding: 4px 12px;
+  border-radius: 16px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Add Button */
+.card .add-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: linear-gradient(135deg, #2E7D32, #1B5E20);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+  box-shadow: 0 3px 8px rgba(46,125,50,0.3);
+}
+
+.card .add-btn:hover {
+  transform: scale(1.12);
+  background: linear-gradient(135deg, #43A047, #2E7D32);
+}
+
+/* Gradients (backgrounds) */
+.card--sunset { background: linear-gradient(180deg,#FFF0E0,#FFD8A8); }
+.card--orange { background: linear-gradient(180deg,#FFEAD9,#FFDCC3); }
+.card--yellow { background: linear-gradient(180deg,#FFFBE6,#FFF5CC); }
+.card--golden { background: linear-gradient(180deg,#FFF8E1,#FFE082); }
+.card--spice { background: linear-gradient(180deg,#FFE8E0,#FFCCB3); }
+.card--lavender { background: linear-gradient(180deg,#F2E9FC,#E5DFF3); }
+.card--leaf { background: linear-gradient(180deg,#E8F5E9,#C8E6C9); }
+.card--mint { background: linear-gradient(180deg,#E9FCEB,#DFF3E6); }
+.card--mint-2 { background: linear-gradient(180deg,#F6F9E9,#EAF0C9); }
+.card--rose { background: linear-gradient(180deg,#FFE6E6,#FFD6D6); }
