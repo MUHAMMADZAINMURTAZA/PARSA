@@ -1,3 +1,15 @@
+
+:root{
+  --bg: #ffffff;
+  --brand-red: #B71C1C;       /* deep red for PARSA word */
+  --brand-green: #2E7D32;     /* deep green for nav links and accents */
+  --muted: #6b6b6b;
+  --card-radius: 20px;
+  --shadow: 0 8px 20px rgba(30,30,30,0.08);
+  --gap: 14px;
+  --max-width: 980px;
+}
+
 /* Base Font */
 body {
   margin: 0;
@@ -216,4 +228,5 @@ body {
 .card--mint { background: linear-gradient(180deg,#E9FCEB,#DFF3E6); }
 .card--mint-2 { background: linear-gradient(180deg,#F6F9E9,#EAF0C9); }
 .card--rose { background: linear-gradient(180deg,#FFE6E6,#FFD6D6); }
+
 
