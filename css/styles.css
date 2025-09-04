@@ -276,7 +276,16 @@ body{
   text-align: center;
   padding: 0px 16px;
 }
-
+:root {
+  --bg: #ffffff;
+  --brand-red: #B71C1C;
+  --brand-green: #2E7D32;
+  --muted: #6b6b6b;
+  --card-radius: 20px;
+  --shadow: 0 8px 20px rgba(30,30,30,0.08);
+  --gap: 14px;
+  --max-width: 980px;
+}
 
 .about {
   background: var(--bg);
@@ -592,4 +601,3 @@ body{
   color: inherit;
 }
 /* On larger screens: allow some horizontal layout if you want */
-
