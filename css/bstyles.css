@@ -229,4 +229,64 @@ body {
 .card--mint-2 { background: linear-gradient(180deg,#F6F9E9,#EAF0C9); }
 .card--rose { background: linear-gradient(180deg,#FFE6E6,#FFD6D6); }
 
+/* bottom nav (mobile) */
+.bottom-nav {
+  position: fixed;
+  left: 10px;
+  right: 10px;
+  bottom: 12px;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  border-radius: 18px;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 6px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.1);
+  z-index: 60;
+  transition: all 0.3s ease-in-out;
+}
+
+/* nav items */
+.bn-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #444;
+  font-weight: 600;
+  font-size: 0.8rem;
+  padding: 6px 0;
+  transition: all 0.25s ease-in-out;
+}
+
+.bn-item i {
+  font-size: 1.3rem;
+  margin-bottom: 3px;
+  transition: transform 0.25s ease-in-out;
+}
+
+
+/* active & hover */
+.bn-item.active, 
+.bn-item:hover {
+  color: #F04F0D; /* your brand orange */
+}
+
+.bn-item.active i, 
+.bn-item:hover i {
+  transform: scale(1.2);
+}
+
+/* mobile floating feel */
+@media (min-width: 768px) {
+  .bottom-nav {
+    left: 25%;
+    right: 25%;
+    bottom: 20px;
+  }
+}
+
+
+
 
